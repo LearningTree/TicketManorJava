@@ -1,4 +1,0 @@
-TicketManor
-===========
-
-A Demo Application
