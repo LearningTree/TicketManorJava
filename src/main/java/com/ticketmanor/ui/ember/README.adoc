@@ -1,0 +1,1 @@
+This contains an Ember.JS UI for part of the TicketManor application.

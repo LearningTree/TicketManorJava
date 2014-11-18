@@ -1,0 +1,1 @@
+This contains the Swing UI for a local administrative client for TicketManor.
