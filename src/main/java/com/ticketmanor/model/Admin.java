@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 public class Admin extends Person  {
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	long id;
+	// the id property is inherited
+
 	// TODO
 }

@@ -7,8 +7,8 @@ import javax.persistence.*;
  */
 @Entity
 public class Member extends Person  {
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	long id;
+	// the id property is inherited
+
 	/** The profile photo. A full-blown UI should support uploading this. */
 	private byte[] profilePhoto;
 }

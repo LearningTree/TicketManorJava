@@ -5,7 +5,7 @@ import javax.persistence.*;
 /*
  * Person - XXX
  */
-@Entity @Table(name="Persons")
+@Entity @Table(name="people")
 public class Person   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
