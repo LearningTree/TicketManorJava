@@ -1,3 +1,7 @@
 == TicketManor
 
 A Demo Application. Details will follow.
+
+Legal Note: We do _not_ intend this to be a passing-off of TicketMaster.com, which is a trademark in
+most countries. It is just a demonstration of how certain parts of an enterprise app could
+be implemented. WE ARE NOT ACTUALLY SELLING ANY TICKETS.
