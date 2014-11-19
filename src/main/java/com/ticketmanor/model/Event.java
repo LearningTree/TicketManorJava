@@ -13,7 +13,7 @@ public class Event   {
 	Act what;
 	/** When this ticket is for (to the minute, e.g., 2014-11-11T11:11) */
 	LocalDateTime when;
-	/** The Venue at which the event takes place.
+	/** The Venue at which the event takes place. */
 	Venue where;
 
 	public String toString() {
