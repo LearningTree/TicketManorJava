@@ -1,5 +1,7 @@
 package com.ticketmanor.model;
 
+import javax.persistence.*;
+
 /*
  * Admin - XXX
  */
