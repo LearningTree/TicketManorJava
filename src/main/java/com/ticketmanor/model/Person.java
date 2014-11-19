@@ -9,5 +9,9 @@ import javax.persistence.*;
 public class Person   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
-	// TODO
+	
+	String firstName, middles, lastName;
+	String email;
+	@Embedded
+	Address address;
 }
