@@ -8,7 +8,7 @@
 	<artifactId>mega-app</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Comprehensive Enterprise App</name>
+	<name>TicketManor, a Demo Enterprise Application</name>
 	<url>http://darwinsys.com/ticketmanor/</url>
 
 	<properties>
