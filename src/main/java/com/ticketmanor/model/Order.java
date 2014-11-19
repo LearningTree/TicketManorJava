@@ -4,14 +4,14 @@ import java.util.*;
 import javax.persistence.*;
 
 /*
- * Order - An order is one or more Tickets for one Customer
+ * Order - An order is one or more Tickets for one Member (a.k.a. "customer")
  */
 @Entity @Table(name="Orders")
 public class Order   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	@ManyToOne
-	Customer customer;
+	Member member;
 	@OneToMany
 	List<Ticket> tickets = new ArrayList<>();
 }

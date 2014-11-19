@@ -1,5 +1,6 @@
 package com.ticketmanor.model;
 
+import java.time.*;
 import javax.persistence.*;
 
 /*
@@ -17,6 +18,6 @@ public class Event   {
 	Venue where;
 
 	public String toString() {
-		return act + "@" + when + " " + where;
+		return what + "@" + when + " " + where;
 	}
 }
