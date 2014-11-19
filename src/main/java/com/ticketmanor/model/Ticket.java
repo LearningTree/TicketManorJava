@@ -7,5 +7,7 @@ import javax.persistence.*;
  */
 @Entity @Table(name="Tickets")
 public class Ticket   {
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	long id;
 	// TODO
 }

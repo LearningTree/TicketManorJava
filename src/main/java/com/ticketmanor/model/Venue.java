@@ -7,5 +7,7 @@ import javax.persistence.*;
  */
 @Entity @Table(name="Venues")
 public class Venue   {
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	long id;
 	// TODO
 }
