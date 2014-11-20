@@ -1,0 +1,37 @@
+== Development Process
+
+=== Java Team Members
+
+If you are part of the Learning Tree Java/Android team, you should have access from your GitHub account.
+If you are and you don't, please contact your Product Manager.
+
+The current mode is "commit then review" (in the Apache sense), that is, you can make changes,
+commit them, and push them to "master". If somebody objects to your code, we'll talk about it,
+otherwise, your contribution is in. We each have designated areas to work on based on course
+affiliation, so there shouldn't be much in the way of conflict (we hope!).
+
+=== Students and Others
+
+If you are not part of this team, please fork the repository on github, make your changes,
+and send a Pull Request. We will try to answer respond to these within a week, but we all have
+other activities on the go. If you keep your coding style similar to ours, have tests for new
+or changed code, and generally follow best practices, you have a better chance of getting your
+contribution accepted.
+
+=== Coding Style
+
+Please use the Sun/Oracle Java Coding Standards.
+
+Use tabs, not spaces. One tab per indent. Break lines over 133 chars at a sensible place.
+"+" or "." at the end of the line, not the beginning of the next line.
+
+	final String MESSAGE = "Lorem ipsum dolor sit amet, consectetur adipisicing elit,\n" +
+		"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+	String result = someObject.getAnotherValue(MESSAGE).getResultList().
+		get(currentIndex).toString();
+
+Anything else, use your best judgement.
+
+Thanks for being consistent!
+
+Ian
