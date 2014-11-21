@@ -1,0 +1,15 @@
+== ToDo
+
+In case it's not obvious, the following is IN ADDITION to getting
+the basic functionality working across all the designated APIs
+that we need to demonstrate in the courses.
+
+== Web UI
+
+* Get a decent design
+
+== Neat Functionality
+
+* Digest an RSS feed of new movies, concerts, acts, and load into the database.
+* "Sync Instance" feature to update the database from a master copy on the Internet.
+
