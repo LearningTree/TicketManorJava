@@ -10,6 +10,8 @@ commit them, and push them to "master". If somebody objects to your code, we'll 
 otherwise, your contribution is in. We each have designated areas to work on based on course
 affiliation, so there shouldn't be much in the way of conflict (we hope!).
 
+No need to squash commits (see "Squashed Commit is a Lie" on the interwebs).
+
 === Students and Others
 
 If you are not part of this team, please fork the repository on github, make your changes,
