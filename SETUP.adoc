@@ -1,0 +1,24 @@
+== SETUP
+
+Install MySQL Database.  Start it.
+
+Install MySQL Workbench.  Run it.
+
+	Create account
+		Name: ticketmeister
+		Password: see in persistence.xml
+		Host: localhost
+		Admin Permissions: DBA # do NOT use this in production deployments!
+			Needs to be much more fine grained.
+
+Open the TicketManor project in Eclipse.
+	Run the "JpaDemo" application to make sure your database setup is OK.
+		Should print one entry for Carnegie Hall.
+
+Install WildFly app server. Start it.
+
+Do mvn wildfly:deploy; the web app should deploy to JBoss WildFly without errors.
+
+Visit the server with a browser at http://localhost:8000/ticketmanor/.
+
+The site should be operational!
