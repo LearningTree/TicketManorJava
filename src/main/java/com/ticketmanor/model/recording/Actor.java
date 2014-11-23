@@ -5,12 +5,14 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.ticketmanor.model.Person;
 
 @Entity
 public class Actor extends Person {
 	
+	@OneToMany
 	Set<VideoRecording> videos = new HashSet<VideoRecording>();
 	
 	public Actor() {

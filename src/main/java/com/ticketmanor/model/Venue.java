@@ -14,6 +14,12 @@ public class Venue   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	
+	String name;
+	
 	@OneToMany
 	Set<Auditorium> auditoria = new HashSet<>();
+	
+	public String toString() {
+		return "Venue(" + name + ")";
+	};
 }
