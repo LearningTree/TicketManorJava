@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 /*
  * Person - XXX
  */
-@Entity @Table(name="people")
+@Entity @Table(name="People")
 public class Person   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
