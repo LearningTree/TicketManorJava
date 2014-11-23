@@ -1,20 +1,26 @@
 == ToDo
 
-In case it's not obvious, the following is IN ADDITION to getting
+== Basics
+
+Need to have a different persistence.xml for main programs (under Eclipse) and for the web tier (under
+the server), one using JDBC Params and the other using a DataSource.
+
+== Beyond The Basics
+
+The following is IN ADDITION to getting
 the basic functionality working across all the designated APIs
 that we need to demonstrate in the courses. It's more a placeholder
 for IDEAS than an actual list of steps to do.
 
-== Web UI
+=== Web UI
 
 * Get a decent design
 
-== Neat Functionality
+=== Neat Functionality
 
 * Digest an RSS feed of new movies, concerts, acts, and load into the database.
 * "Sync Instance" feature to update the database from a master copy on the Internet.
 
+=== Cross-Platform
 
-== Cross-Platform
-
-Use https://github.com/google/j2objc/[j2objc] to make iOS versions of at least the Model classes.
+Maybe use https://github.com/google/j2objc/[j2objc] to make iOS versions of at least the Model classes.
