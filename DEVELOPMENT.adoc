@@ -3,7 +3,7 @@
 === Java Team Members
 
 If you are part of the Learning Tree Java/Android team, you should have access from your GitHub account.
-If you are and you don't, please contact your Product Manager.
+If you are and you don't, please contact a team member or the Java Product Manager.
 
 The current mode is "commit then review" (in the Apache sense), that is, you can make changes,
 commit them, and push them to "master". If somebody objects to your code, we'll talk about it,
