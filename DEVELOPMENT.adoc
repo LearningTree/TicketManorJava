@@ -22,7 +22,7 @@ contribution accepted.
 
 === Coding Style
 
-Please use the Sun/Oracle Java Coding Standards.
+Please use http://www.oracle.com/technetwork/java/codeconventions-150003.pdf[the Sun/Oracle Java Coding Standards].
 
 Use tabs, not spaces. One tab per indent. Break lines over 133 chars at a sensible place.
 "+" or "." at the end of the line, not the beginning of the next line.
