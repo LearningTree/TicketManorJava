@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /*
- * Person - XXX
+ * Person - One individual person who has some interaction with the system.
  */
 @Entity @Table(name="People")
 public class Person   {
