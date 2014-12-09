@@ -83,6 +83,22 @@
 		<artifactId>wildfly-maven-plugin</artifactId>
 		<version>1.0.2.Final</version>
 		<executions>
+			<!-- The JDBC Driver -->
+			<!-- Copied verbatim (but for driver name) from
+			 *** https://docs.jboss.org/wildfly/plugins/maven/latest/examples/deployment-example.html
+			 *** But the example does not work.
+			 -->
+			<execution>
+				<phase>install</phase>
+				<goals>
+					<goal>deploy-artifact</goal>
+				</goals>
+				<configuration>
+					<groupId>mysql</groupId>
+					<artifactId>mysql-connector-java</artifactId>
+				</configuration>
+			</execution>
+			<!-- The Main App -->
 			<execution>
 				<id>add-datasource</id>
 				<phase>package</phase>
@@ -97,8 +113,7 @@
 								<jndi-name>java:jboss/TicketManorDatasource</jndi-name>
 								<enabled>true</enabled>
 								<connection-url>jdbc:mysql://localhost/ticketmanor</connection-url>
-								<driver-class>com.mysql.jdbc.Driver</driver-class>
-								<driver-name>mysql-connector-java</driver-name>
+								<driver-name>mysql-connector-java-5.1.34.jar</driver-name>
 								<user-name>ticketmeister</user-name>
 								<password>mineYourBiz</password>
 							</properties>
