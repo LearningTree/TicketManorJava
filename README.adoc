@@ -6,7 +6,7 @@ and so on.
 
 It will be used as a showcase in various courses offered by http://learningtree.com/[Learning Tree],
 the world leader in instructor-led tecnical training. Learning Tree offers courses in Java
-as well as many other enterprise applicactions.
+as well as many other enterprise applications.
 
 Legal Note: We do _not_ intend this to be a passing-off of TicketMaster.com, which is a trademark in
 most countries. It is just a demonstration of how certain parts of an enterprise app could
