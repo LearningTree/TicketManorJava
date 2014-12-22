@@ -30,6 +30,10 @@ button.main_page:hover {
     background-color: yellow;
 }
 
+nav.top {
+	align: right;
+}
+
 /* Paragraph formats: use generic, non-vendor specific names (no Arial) */
 h1	{ color: black; }
 h2	{ color: black; }
