@@ -6,6 +6,7 @@ import javax.persistence.*;
  * Member - A Person who has signed up for the site.
  */
 @Entity
+@Table(name="Members")
 public class Member extends Person  {
 	// the id property is inherited
 
