@@ -4,7 +4,8 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" title="style"/>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+	<link rel="stylesheet" type="text/css" href="css/ember-site.css"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name='viewport' content='width=device-width, initial-scale=1'/>
 	<title>TicketManor </title>
@@ -12,12 +13,29 @@
 
 <body bgcolor="white">
 
-<nav class='top'>
-<button class='main_page' href='#'>Home</button>
-<button class='main_page' href='#'>Sports</button>
-<button class='main_page' href='#'>Concerts</button>
-<button class='main_page' href='#'>Movies</button>
-</nav>
+	<div id="header">
+      <div id="wrapper">
+        <a id="logo" href="/">&nbsp;</a>
+        <ul id="nav">
+          <li class="active"><a href="/home">home</a></li>
+          <li><a href="/sports">sports</a></li>
+          <li><a href="/concerts">concerts</a></li>
+          <li><a href="/movies">movies</a></li>
+          <li><a href="/blog">blog</a></li>
+          <li id="search">
+            <form>
+              <input type="text" id="st-search-input" class="st-search-input" />
+            </form>
+            <div id="st-results-container"></div>
+          </li>
+        </ul>
+
+        <div id="github">
+          <a href="https://github.com/LearningTree/TicketManorJava"><i class="icon-fork"></i>Fork Us!</a>
+        </div>
+      </div>
+    </div>
+
 <p>There is nothing here yet. We are peddling uphill as fast as we can.
 </p>
 
