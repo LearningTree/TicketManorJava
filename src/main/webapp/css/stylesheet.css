@@ -16,7 +16,8 @@ body, button, h1, h2, h3, h4, h5, h6, input, textarea {
 
 /* Page attributes */
 body	{
-	background-color: #00ccff; color: #000;
+	background-color: #00ccff; 
+	color: #000;
     font-size   : 12px;
 }
 body.admin_page {
