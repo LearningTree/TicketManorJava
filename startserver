@@ -8,7 +8,7 @@ function usage {		# give usage message, and exit
 }
 
 function help {
-	echo "Start a trivial webserver for test/demo purposes. Options:
+	echo "Start a trivial webserver for test/demo purposes. No JavaEE support. Options:
 -d: daemonize (run in background)
 -h: print help (you are reading it) and exit
 -o: Open the start page in the user's default browser (Mac only for now)
