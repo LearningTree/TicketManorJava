@@ -22,7 +22,7 @@ public class CsrChatServer {
 	List<String> log = new ArrayList<>();
 
 	@OnOpen
-	public void onOpen(Session session, String message) throws IOException {
+	public void onOpen(Session session) throws IOException {
 		System.out.println("CsrChatServer.onOpen()");
 	}
 	

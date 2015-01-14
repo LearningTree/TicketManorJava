@@ -5,7 +5,7 @@
 	<!-- Map the JBoss-specific JNDI name to the generic JDBC/JNDI name -->
 	<resource-ref>
 		<res-ref-name>jdbc/TicketManorDB</res-ref-name>
-		<jndi-name>java:/jdbc/TicketManorDB</jndi-name>
+		<jndi-name>java:jboss/datasources/TicketManorDataSource</jndi-name>
 	</resource-ref>
 
 </jboss-web>
