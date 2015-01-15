@@ -10,5 +10,6 @@ public class Auditorium   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 
-	// TODO
+	String name;
+	String address;
 }

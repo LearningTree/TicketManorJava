@@ -18,6 +18,12 @@ public class Event   {
 	/** The Venue at which the event takes place. */
 	@ManyToOne
 	Venue where;
+	
+	public Event(Act act, LocalDateTime when, Venue where) {
+		this.what = act;
+		this.when = when;
+		this.where = where;
+	}
 
 	public String toString() {
 		return what + "@" + when + " " + where;

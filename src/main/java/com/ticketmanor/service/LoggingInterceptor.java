@@ -1,6 +1,7 @@
 package com.ticketmanor.service;
 
 import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptors;
 import javax.interceptor.InvocationContext;
 
 public class LoggingInterceptor {
@@ -12,6 +13,11 @@ public class LoggingInterceptor {
 		return o;
 	}
 	
+	@Interceptors({LoggingInterceptor.class,LoggingInterceptor.class})
+	public void validateCredit() {
+		System.out.println("LoggingInterceptor.validateCredit(): I was here");
+	}
+
 	void log(String mesg) {
 		System.out.println(mesg);
 	}
