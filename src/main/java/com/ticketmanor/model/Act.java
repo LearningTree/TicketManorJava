@@ -1,5 +1,6 @@
 package com.ticketmanor.model;
 
+import java.util.List;
 import javax.persistence.*;
 
 /*
@@ -15,6 +16,8 @@ public class Act   {
 	ActType type;
 	int year;
 	String notes;
+	@OneToMany
+	List<Event> events;
 	
 	public long getId() {
 		return id;

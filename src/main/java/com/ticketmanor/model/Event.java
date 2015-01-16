@@ -25,6 +25,10 @@ public class Event   {
 		this.dateTime = dateTime;
 		this.where = where;
 	}
+	
+	public Event() {
+		// required by JPA
+	}
 
 	public String toString() {
 		return what + "@" + dateTime + " " + where;
