@@ -13,10 +13,11 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="2000"
    height="3000"
+   overflow="inherit"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="background-circles.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -68,7 +69,7 @@
     <linearGradient
        id="linearGradient3773">
       <stop
-         style="stop-color:#dbc70e;stop-opacity:1;"
+         style="stop-color:#ece180;stop-opacity:1;"
          offset="0"
          id="stop3775" />
       <stop
@@ -119,7 +120,7 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient3773"
+       xlink:href="#linearGradient3761"
        id="linearGradient3787"
        x1="-68.657654"
        y1="131.27435"
@@ -163,9 +164,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.69211641"
-     inkscape:cx="632.84152"
-     inkscape:cy="665.93531"
+     inkscape:zoom="0.184"
+     inkscape:cx="1000"
+     inkscape:cy="1500"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -183,7 +184,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -192,12 +193,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:url(#linearGradient3767);fill-opacity:1.0;stroke:#000000;stroke-width:1.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3769);opacity:0.71308017000000001"
+       style="opacity:0.71308019;fill:url(#linearGradient3767);fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3769)"
        id="rect2991"
        width="748.42902"
        height="784.65002"
        x="-4.3345308"
-       y="1.9608454" />
+       y="1.9608454"
+       transform="matrix(1.6342105,0,0,1.2743543,124.11389,52.152063)" />
     <path
        sodipodi:type="arc"
        style="fill:url(#linearGradient3787);fill-opacity:1.0;stroke:url(#linearGradient3779);stroke-width:1.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -209,22 +211,23 @@
        d="m 281.74451,131.27435 a 174.82608,198.666 0 1 1 -349.652164,0 174.82608,198.666 0 1 1 349.652164,0 z" />
     <path
        sodipodi:type="arc"
-       style="fill:url(#linearGradient3809);fill-opacity:1;stroke:url(#radialGradient3801);stroke-width:1.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:url(#linearGradient3809);fill-opacity:1;stroke:url(#radialGradient3801);stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path2987"
        sodipodi:cx="208.77991"
        sodipodi:cy="191.95778"
        sodipodi:rx="288.24631"
        sodipodi:ry="231.8974"
        d="m 497.02621,191.95778 a 288.24631,231.8974 0 1 1 -576.49261,0 288.24631,231.8974 0 1 1 576.49261,0 z"
-       transform="translate(138.70499,173.38124)" />
+       transform="matrix(1.9517234,0,0,1.4561746,214.8494,192.11506)" />
     <path
        sodipodi:type="arc"
-       style="fill:url(#linearGradient3825);fill-opacity:1.0;stroke:none;stroke-width:1.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:url(#linearGradient3825);fill-opacity:1;stroke:none"
        id="path2989"
        sodipodi:cx="624.8949"
        sodipodi:cy="570.50684"
        sodipodi:rx="124.97897"
        sodipodi:ry="145.20679"
-       d="m 749.87387,570.50684 a 124.97897,145.20679 0 1 1 -249.95795,0 124.97897,145.20679 0 1 1 249.95795,0 z" />
+       d="m 749.87387,570.50684 a 124.97897,145.20679 0 1 1 -249.95795,0 124.97897,145.20679 0 1 1 249.95795,0 z"
+       transform="matrix(1.9517234,0,0,1.4561746,-55.864371,-60.358304)" />
   </g>
 </svg>
