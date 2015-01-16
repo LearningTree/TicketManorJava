@@ -78,36 +78,13 @@
 			<target>1.8</target>
 		</configuration>
 	   </plugin>
+
 	   <plugin>
 		<groupId>org.wildfly.plugins</groupId>
 		<artifactId>wildfly-maven-plugin</artifactId>
 		<version>1.0.2.Final</version>
-		<executions>
-			<execution>
-				<id>add-datasource</id>
-				<phase>package</phase>
-				<goals>
-					<goal>add-resource</goal>
-				</goals>
-				<configuration>
-					<address>subsystem=datasources,data-source=java:jboss/TicketManorDatasource</address>
-					<resources>
-						<resource>
-							<properties>
-								<jndi-name>java:jboss/TicketManorDatasource</jndi-name>
-								<enabled>true</enabled>
-								<connection-url>jdbc:mysql://localhost/ticketmanor</connection-url>
-								<driver-class>com.mysql.jdbc.Driver</driver-class>
-								<driver-name>mysql-connector-java</driver-name>
-								<user-name>ticketmeister</user-name>
-								<password>mineYourBiz</password>
-							</properties>
-						</resource>
-					</resources>
-				</configuration>
-			</execution>
-		</executions>
 		</plugin>
+
 	</plugins>
 	</build>
 </project>

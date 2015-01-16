@@ -1,0 +1,61 @@
+#!/bin/sh
+
+USAGE="$0 [-d][-h][-o][-p portNum]"
+
+function usage {		# give usage message, and exit
+	echo "Usage: ${USAGE}" 2>&1
+	exit 1
+}
+
+function help {
+	echo "Start a trivial webserver for test/demo purposes. No JavaEE support. Options:
+-d: daemonize (run in background)
+-h: print help (you are reading it) and exit
+-o: Open the start page in the user's default browser (Mac only for now)
+-p: Use a port number other than the default 8000.
+Any existing instance of this server will be killed and a new one started."
+	exit 0
+}
+
+DAEMON=no
+PORT=8000
+OPEN=no
+while getopts "hdop:" opt 
+do 
+	case "$opt" in 
+		d)	DAEMON=yes;;
+		h)	help;;
+		o)	OPEN=yes;;
+		p)	PORT=${OPTARG};;
+		*)	usage;;
+	esac
+done
+shift `expr $OPTIND - 1`		 # leave just filenames
+
+# change to the current working directory
+cd `dirname $0`
+
+URL=http://localhost:${PORT}
+echo $URL
+
+pkill -f "python -m SimpleHTTPServer ${PORT}$"
+
+if [ "${OPEN}" == "yes" ]; then
+	# Mac - open in the default browser
+	(sleep 1 && open $URL &)
+fi
+
+cd src/main/webapp
+
+case ${DAEMON} in
+	yes)
+			LOG=$(mktemp /tmp/serverlog.XXXXXXX)
+			echo "Starting webserver in background; server log in ${LOG}" >&2
+			python -m SimpleHTTPServer ${PORT} >${LOG} 2>&1 &
+			exit 0
+			;;
+	*)
+			echo "Starting webserver (fg)..."
+			exec python -m SimpleHTTPServer ${PORT}
+			;;
+esac
