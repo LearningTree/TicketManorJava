@@ -14,18 +14,39 @@ public class Event   {
 	@ManyToOne
 	Act what;
 	/** When this ticket is for (to the minute, e.g., 2014-11-11T11:11) */
-	LocalDateTime when;
+	@Column(name="date_time")
+	LocalDateTime dateTime;
 	/** The Venue at which the event takes place. */
 	@ManyToOne
 	Venue where;
 	
-	public Event(Act act, LocalDateTime when, Venue where) {
+	public Event(Act act, LocalDateTime dateTime, Venue where) {
 		this.what = act;
-		this.when = when;
+		this.dateTime = dateTime;
 		this.where = where;
 	}
 
 	public String toString() {
-		return what + "@" + when + " " + where;
+		return what + "@" + dateTime + " " + where;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public Act getWhat() {
+		return what;
+	}
+
+	public LocalDateTime getWhen() {
+		return dateTime;
+	}
+
+	public Venue getWhere() {
+		return where;
 	}
 }
