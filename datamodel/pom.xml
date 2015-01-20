@@ -8,7 +8,7 @@
 	<artifactId>datamodel</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>TicketManor, a Demo Enterprise Application</name>
+	<name>Data Model for TicketManor, a Demo Enterprise Application</name>
 	<url>http://ticketmanor.com/</url>
 
 	<properties>
