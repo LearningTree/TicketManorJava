@@ -36,7 +36,8 @@
 			<gradleProjectDirectory>${project.basedir}/android</gradleProjectDirectory>
             <tasks>
             <!-- Name of the gradle task to perform -->
-            <task>package</task>
+			<!-- For Android Studio Gradle, "build" is like Maven "package" -->
+            <task>build</task>
         </tasks>
        </configuration>
         <executions>
