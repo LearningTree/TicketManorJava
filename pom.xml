@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
 	<url>http://ticketmanor.com/</url>
 
+	<name>TicketManor top-level project</name>
+
     <modules>
 		<module>datamodel</module>
         <module>javaee</module>
@@ -24,12 +26,13 @@
 	 *** This plugin is only needed because Android moved away from the one true build tool :-)
 	 *** It will only be invoked if you run "mvn package" in the top-level directory.
 	 -->
-<!--	Good, but just not there yet.
 	<plugin>
       <groupId>org.fortasoft</groupId>
       <artifactId>gradle-maven-plugin</artifactId>
       <version>1.0.5</version>
         <configuration>
+			<!-- Keep this in sync with the Android Build version of gradle. -->
+			<gradleVersion>1.9</gradleVersion>
 			<gradleProjectDirectory>${project.basedir}/android</gradleProjectDirectory>
             <tasks>
             <!-- Name of the gradle task to perform -->
@@ -47,7 +50,6 @@
           </execution>
         </executions>
       </plugin>
--->
 	</plugins>
 	</build>
 </project>
