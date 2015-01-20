@@ -68,6 +68,7 @@
 		<!-- M I S C E L L A N Y -->
 		
 		<!-- Jersey, for the JAX-RS Client impl -->
+		<!-- 
 		<dependency>
     		<groupId>org.glassfish.jersey.core</groupId>
     		<artifactId>jersey-client</artifactId>
@@ -78,6 +79,7 @@
 			<artifactId>jersey-media-json-jackson</artifactId>
 			<version>2.7</version>
 		</dependency>
+		 -->
 
 	</dependencies>
  

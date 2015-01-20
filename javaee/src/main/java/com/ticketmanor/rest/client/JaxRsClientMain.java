@@ -5,7 +5,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
-import org.glassfish.jersey.jackson.JacksonFeature;
+//import org.glassfish.jersey.jackson.JacksonFeature;
 
 import com.ticketmanor.model.Event;
 
@@ -21,7 +21,7 @@ public class JaxRsClientMain {
 
 	public static void main(String[] args) {
 		Client cl = ClientBuilder.newClient();
-		cl.register(JacksonFeature.class);
+		//cl.register(JacksonFeature.class);
 		WebTarget target = cl.target(URL);
 		Event e = target.request(MediaType.APPLICATION_JSON).get(Event.class);
 		System.out.println("Got an event: " + e);

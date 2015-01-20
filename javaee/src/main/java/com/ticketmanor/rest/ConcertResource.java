@@ -1,5 +1,7 @@
 package com.ticketmanor.rest;
 
+import java.util.List;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.transaction.Transactional;
@@ -15,7 +17,13 @@ import com.ticketmanor.model.Event;
 @Path("/concerts")
 public class ConcertResource {
 
-	@PersistenceUnit EntityManagerFactory emf;
+	@PersistenceUnit EntityManagerFactory emf; // Web tier is multi-threaded
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Event> getConcerts() {
+		return emf.createEntityManager().createQuery("FROM Event").getResultList();
+	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
