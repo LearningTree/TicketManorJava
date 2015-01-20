@@ -5,10 +5,11 @@
  
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ticketmanor</groupId>
-	<artifactId>ticketmanor-javaee</artifactId>
-	<packaging>war</packaging>
+	<artifactId>ticketmanor-javaee-client</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>Java EE Server for TicketManor, a Demo Enterprise Application</name>
+	<packaging>jar</packaging>
+
+	<name>Java EE Clients for TicketManor, a Demo Enterprise Application</name>
 	<url>http://ticketmanor.com/</url>
 
 	<properties>
@@ -23,32 +24,30 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
-		<!-- Java EE API -->
+		<!-- Java EE (Web Profile) API needed to compile some clients -->
 		<dependency>
 		   <groupId>javax</groupId>    
 			<artifactId>javaee-web-api</artifactId>    
 			<version>7.0</version>  
 		</dependency> 
  
-		<!-- PrimeFaces JSF Add-on -->
-		<dependency>
-			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<version>4.0</version>
-		</dependency>
-
-		<!-- Hibernate not needed in WildFly as it is included, but prob. needed on other App Servers-->
+		<!-- Hibernate; used in client-side JPA demos -->
 		<dependency>
 		  <groupId>org.hibernate</groupId>
 		  <artifactId>hibernate-core</artifactId>
 		  <version>4.3.7.Final</version>
-		  <scope>provided</scope>
 		</dependency>
 		<dependency>
 		  <groupId>org.hibernate</groupId>
 		  <artifactId>hibernate-entitymanager</artifactId>
 		  <version>4.3.7.Final</version>
-		  <scope>provided</scope>
+		</dependency>
+
+		<!-- Database driver; ditto -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.34</version>
 		</dependency>
 
         <!-- testing -->
@@ -58,17 +57,23 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-
-		<!-- Database driver -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.34</version>
-		</dependency>
 		
+		<!-- Jersey, for the JAX-RS Client impl -->
+		<dependency>
+    		<groupId>org.glassfish.jersey.core</groupId>
+    		<artifactId>jersey-client</artifactId>
+    		<version>2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.7</version>
+		</dependency>
+
 	</dependencies>
  
 	<build>
+		<finalName>TicketManor</finalName>
 		<plugins>
 		   <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -79,13 +84,6 @@
 				<target>1.8</target>
 			</configuration>
 		   </plugin>
-
-		   <plugin>
-			<groupId>org.wildfly.plugins</groupId>
-			<artifactId>wildfly-maven-plugin</artifactId>
-			<version>1.0.2.Final</version>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
