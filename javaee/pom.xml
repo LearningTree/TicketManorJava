@@ -88,11 +88,11 @@
 			</plugin>
 
 			<!-- Java EE AppServer: GlassFish (see https://maven-glassfish-plugin.java.net/usage.html) -->
-			<dependency>
+			<plugin>
 				<groupId>org.glassfish.maven.plugin</groupId>
 				<artifactId>maven-glassfish-plugin</artifactId>
 				<version>2.1</version>
-			</dependency>
+			</plugin>
 
 			<!-- Java EE AppServer: TomEE (see http://tomee.apache.org/tomee-maven-plugin.html) -->
 			<plugin>
