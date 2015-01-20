@@ -43,7 +43,12 @@
 		  <version>4.3.7.Final</version>
 		</dependency>
 
-		<!-- Database driver; ditto -->
+		<!-- Database drivers; ditto -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.184</version>
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
