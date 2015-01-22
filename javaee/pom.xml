@@ -81,7 +81,7 @@
 		   </plugin>
 
 			<!-- Java EE AppServer: WildFly -->
-		   <plugin>
+			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.2.Final</version>
@@ -96,13 +96,13 @@
 
 			<!-- Java EE AppServer: TomEE (see http://tomee.apache.org/tomee-maven-plugin.html) -->
 			<plugin>
-			  <groupId>org.apache.openejb.maven</groupId>
-			  <artifactId>tomee-maven-plugin</artifactId>
-			  <version>1.7.1</version>
-			  <configuration>
-				<tomeeVersion>1.7.1</tomeeVersion>
-				<tomeeClassifier>plus</tomeeClassifier>
-			  </configuration>
+				<groupId>org.apache.openejb.maven</groupId>
+				<artifactId>tomee-maven-plugin</artifactId>
+				<version>1.7.1</version>
+				<configuration>
+					<tomeeVersion>1.7.1</tomeeVersion>
+					<tomeeClassifier>plus</tomeeClassifier>
+				</configuration>
 			</plugin>
 
 		</plugins>
