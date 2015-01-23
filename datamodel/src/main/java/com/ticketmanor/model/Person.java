@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 /*
  * Person - One individual person who has some interaction with the system.
  */
-@Entity @Table(name="People")
+@Entity @Table(name="people")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Person {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)

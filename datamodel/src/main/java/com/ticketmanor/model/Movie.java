@@ -1,8 +1,9 @@
 package com.ticketmanor.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Entity
+@Entity @Table(name="movies")
 public class Movie extends Act {
 	
 	String director;

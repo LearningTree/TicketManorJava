@@ -6,7 +6,7 @@ import javax.persistence.*;
 /*
  * Event - An Event is one act at one time at one Venue
  */
-@Entity @Table(name="Events")
+@Entity @Table(name="events")
 public class Event   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;

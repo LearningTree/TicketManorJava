@@ -6,7 +6,7 @@ import javax.persistence.*;
 /*
  * An Act is one entity that people pay to see: A movie, a soloist, a troupe, a rock group, an orchestra...
  */
-@Entity @Table(name="Acts")
+@Entity @Table(name="acts")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Act   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)

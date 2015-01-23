@@ -9,12 +9,16 @@ import javax.persistence.*;
  * Venue - A place where Events happen. Some (such as modern movie theatres) have more than one Auditorium;
  * others (such as large concert halls) do not.
  */
-@Entity @Table(name="Venues")
+@Entity @Table(name="venues")
 public class Venue   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	
 	String name;
+	/** The location */
+	String streetAddress, city, provState, country;
+	/** The Geometry coordinates; N.B. May be null! */
+	Double lat, lng;
 	
 	@OneToMany
 	Set<Auditorium> auditoria = new HashSet<>();
