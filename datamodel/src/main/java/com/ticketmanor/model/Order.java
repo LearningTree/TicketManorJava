@@ -6,7 +6,7 @@ import javax.persistence.*;
 /*
  * Order - An order is one or more Tickets for one Member (a.k.a. "customer")
  */
-@Entity @Table(name="Orders")
+@Entity @Table(name="orders")
 public class Order   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
