@@ -1,0 +1,4 @@
+== Datamodel
+
+This will be the library for the data classes, usable in most or all projects that need
+access to TicketManor data.
