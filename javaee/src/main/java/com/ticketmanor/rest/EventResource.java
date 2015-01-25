@@ -17,7 +17,7 @@ import com.ticketmanor.model.Event;
 @Path("/events")
 public class EventResource {
 
-	@PersistenceUnit EntityManagerFactory emf; // Web tier is multi-threaded
+	@PersistenceUnit(name="ticketManor") EntityManagerFactory emf; // Web tier is multi-threaded
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
