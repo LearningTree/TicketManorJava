@@ -17,7 +17,7 @@ import com.ticketmanor.model.Event;
 public class JaxRsClientMain {
 
 	private static final String URL = 
-		"http://localhost:8080/ticketmanor/rest/concerts/-1";
+		"http://localhost:8080/ticketmanor/rest/events/-1";
 
 	public static void main(String[] args) {
 		Client cl = ClientBuilder.newClient();
