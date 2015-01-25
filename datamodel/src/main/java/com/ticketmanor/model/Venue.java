@@ -20,7 +20,7 @@ public class Venue   {
 	/** The Geometry coordinates; N.B. May be null! */
 	Double lat, lng;
 	
-	@OneToMany
+	@OneToMany(mappedBy="venue")
 	Set<Auditorium> auditoria = new HashSet<>();
 	
 	public String toString() {

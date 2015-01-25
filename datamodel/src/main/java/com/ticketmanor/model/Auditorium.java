@@ -12,4 +12,5 @@ public class Auditorium   {
 
 	String name;
 	String address;
+	@ManyToOne Venue venue;
 }
