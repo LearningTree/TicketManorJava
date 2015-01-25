@@ -5,6 +5,9 @@ import javax.persistence.*;
 /*
  * Member - A Person who has signed up for the site.
  */
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
 @Entity
 @Table(name="members")
 public class Member extends Person  {

@@ -2,6 +2,9 @@ package com.ticketmanor.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
 
 @Entity @Table(name="movies")
 public class Movie extends Act {

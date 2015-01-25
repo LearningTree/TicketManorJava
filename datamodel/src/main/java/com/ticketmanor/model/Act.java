@@ -2,10 +2,12 @@ package com.ticketmanor.model;
 
 import java.util.List;
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
 /*
  * An Act is one entity that people pay to see: A movie, a soloist, a troupe, a rock group, an orchestra...
  */
+@XmlRootElement
 @Entity @Table(name="acts")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Act   {

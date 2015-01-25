@@ -2,11 +2,14 @@ package com.ticketmanor.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.*;
+
 
 /*
  * Person - One individual person who has some interaction with the system.
  */
 @Entity @Table(name="people")
+@XmlRootElement
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Person {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)

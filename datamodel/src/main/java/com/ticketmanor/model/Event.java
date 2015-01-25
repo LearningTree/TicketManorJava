@@ -6,6 +6,9 @@ import javax.persistence.*;
 /*
  * Event - An Event is one act at one time at one Venue
  */
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
 @Entity @Table(name="events")
 public class Event   {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
