@@ -16,6 +16,11 @@
 
 	<jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
 
+	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
+	<jar file="WEB-INF/lib/datamodel-1.0-SNAPSHOT.jar"/>
+	<class>com.ticketmanr.model.Event</class>
+	<class>com.ticketmanr.model.Venue</class>
+	
 	<properties>
 
 	<!-- Properties for eclipselink -->

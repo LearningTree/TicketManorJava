@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.ticketmanor.model.Venue;
 
-@Path("/venue")
+@Path("/venues")
 public class VenueResource {
 
 	@PersistenceUnit EntityManagerFactory emf; // Web tier is multi-threaded
