@@ -20,10 +20,23 @@ public class JaxRsClientMain {
 		"http://localhost:8080/ticketmanor/rest/events/-1";
 
 	public static void main(String[] args) {
+		process();
+	}
+	public static Event process() {
 		Client cl = ClientBuilder.newClient();
 		//cl.register(JacksonFeature.class);
 		WebTarget target = cl.target(URL);
 		Event e = target.request(MediaType.APPLICATION_JSON).get(Event.class);
 		System.out.println("Got an event: " + e);
+		return e;
+	}
+	
+	public static Event process2() {
+		Event e = ClientBuilder.newClient()
+				.target(URL)
+				.request(MediaType.APPLICATION_JSON)
+				.get(Event.class);
+		System.out.println("Got an event: " + e);
+		return e;
 	}
 }
