@@ -1,9 +1,17 @@
 package com.ticketmanor.model;
 
-import javax.persistence.*;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.*;
-
+import javax.validation.constraints.Pattern;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /*
  * Person - One individual person who has some interaction with the system.
@@ -20,6 +28,8 @@ public class Person {
 	protected String middles;
 	@NotNull
 	protected String lastName;
+	// Minimal email validation: name@host.something
+	@Pattern(regexp="\\w+@\\w+\\..*")
 	String email;
 	@Embedded
 	Address address;
