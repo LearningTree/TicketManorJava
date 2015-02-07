@@ -27,7 +27,7 @@ public class EjbTest {
 
 		final Context context = EJBContainer.createEJBContainer(p).getContext();
 
-		EventsBean events = (EventsBean) context.lookup("java:global/injection-of-entitymanager/EventsBean");
+		EventsEjb events = (EventsEjb) context.lookup("java:global/injection-of-entitymanager/EventsBean");
 
 		LocalDateTime today = LocalDateTime.now();
 		events.addEvent(new Event(new Movie("Quentin Tarantino", "Reservoir Dogs", 1992), today, null));

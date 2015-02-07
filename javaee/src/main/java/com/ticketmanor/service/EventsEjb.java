@@ -1,5 +1,6 @@
 package com.ticketmanor.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
@@ -20,37 +22,37 @@ import com.ticketmanor.model.Location;
 @Stateless
 @Local @Remote
 @Path("eventsEjb")
-public class EventsBean {
+public class EventsEjb {
 	@PersistenceContext EntityManager em;
 	
-	final List<Event> events = new ArrayList<>();
-	
-	public List<Event> getEventsForDate(LocalDateTime selectedDate) {
-		// ...
-		return events;
+	/** Get a list of Events on the given date */
+	public List<Event> getEventsForDate(LocalDate selectedDate) {
+		Query q = em.createQuery("from Event e where e.date like " + selectedDate);
+		return q.getResultList();
 	}
 	
-	public List<Event> getEvents() {
-		return events;
+	/** Get events that will occur in the next 'n' days */
+	public List<Event> getEventsNextNDays(int nDays) {
+		LocalDate start = LocalDate.now();
+		LocalDate end = LocalDateTime.from(start).plusDays(nDays).toLocalDate();
+		Query q = em.createQuery("from Event e where e.date <= " + start + " AND e.date >= " + end);
+		return q.getResultList();
 	}
 
 	@GET
 	public List<Event> getEventsNextNDays(int nDays, Location locn) {
-		List<Event> results = new ArrayList<>();
-		// ...
-		return results;
+		// XXX Doesn't handle location yet!
+		return getEventsNextNDays(nDays);
 	}
 	
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void addEvent(Event event) {
 		em.persist(event);
-		events.add(event);
 	}
 
 
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteEvent(Event event) {
-		events.remove(event);
 		em.remove(event);
 	}
 }
