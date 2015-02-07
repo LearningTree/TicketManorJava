@@ -43,6 +43,14 @@ a datasource named TicketManorDataSource.  For initial testing I just added:
 
 We will need to change this to MySQL or a real database before deployment.
 
+=== Naming Conventions
+
+In the Java code:
+
+* *Bean means either a JSF managed JavaBean or a Spring-managed JavaBean;
+* *Resource means a RESTful web service endpoint;
+* *Ejb (or *EJB) of course represents an Enterprise JavaBean.
+
 === ToDos
 
 ==== Basics
