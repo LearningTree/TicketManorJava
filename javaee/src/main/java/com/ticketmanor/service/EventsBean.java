@@ -25,7 +25,7 @@ public class EventsBean {
 	
 	final List<Event> events = new ArrayList<>();
 	
-	public List<Event> findByDate(LocalDateTime selectedDate) {
+	public List<Event> getEventsForDate(LocalDateTime selectedDate) {
 		// ...
 		return events;
 	}
