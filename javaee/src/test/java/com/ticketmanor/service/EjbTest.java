@@ -34,13 +34,11 @@ public class EjbTest {
 		events.addEvent(new Event(new Movie("Joel Coen", "Fargo", 1996), today, null));
 		events.addEvent(new Event(new Movie("Joel Coen", "The Big Lebowski", 1998), today, null));
 
-		List<Event> list = events.getEvents();
+		List<Event> list = events.getAllEvents();
 		assertEquals("List.size()", 3, list.size());
 
 		for (Event event : list) {
 			events.deleteEvent(event);
 		}
-
-		assertEquals("List now empty", 0, events.getEvents().size());
 	}
 }

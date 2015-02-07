@@ -25,6 +25,11 @@ import com.ticketmanor.model.Location;
 public class EventsEjb {
 	@PersistenceContext EntityManager em;
 	
+	public List<Event> getAllEvents() {
+		Query q = em.createQuery("from Event e");
+		return q.getResultList();
+	}
+	
 	/** Get a list of Events on the given date */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
 		Query q = em.createQuery("from Event e where e.date like " + selectedDate);
