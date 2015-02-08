@@ -39,7 +39,7 @@ public class EventsEjb {
 	/** Get events that will occur in the next 'n' days */
 	public List<Event> getEventsNextNDays(int nDays) {
 		LocalDate start = LocalDate.now();
-		LocalDate end = LocalDateTime.from(start).plusDays(nDays).toLocalDate();
+		LocalDate end = LocalDate.from(start).plusDays(nDays);
 		Query q = em.createQuery("from Event e where e.date <= " + start + " AND e.date >= " + end);
 		return q.getResultList();
 	}
