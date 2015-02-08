@@ -31,7 +31,7 @@ public class FakeDataLoaderEjb {
 		em.persist(act);
 		Venue venue = em.find(Venue.class, 1L);
 		
-		LocalDateTime start = LocalDateTime.now();
+		LocalDateTime start = LocalDateTime.now().withHour(19).withMinute(0);
 		for (int i = 0; i < 100; i+=2) {
 			Event ev = new Event(act, start.plusDays(i), venue);
 			em.persist(ev);
