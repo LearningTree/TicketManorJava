@@ -10,9 +10,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Version;
 
+import com.ticketmanor.model.Sellable;
+
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Recording implements Serializable {
+public abstract class Recording implements Sellable, Serializable {
 
 	private static final long serialVersionUID = 129287912L;
 	private int id;

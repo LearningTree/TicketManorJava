@@ -1,5 +1,7 @@
 package com.ticketmanor.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.*;
@@ -9,7 +11,7 @@ import javax.xml.bind.annotation.*;
  */
 @Entity @Table(name="tickets")
 @XmlRootElement
-public class Ticket   {
+public class Ticket implements Sellable, Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	/** The Event that this ticket is for. */
