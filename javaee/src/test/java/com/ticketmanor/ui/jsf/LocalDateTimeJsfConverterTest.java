@@ -21,15 +21,16 @@ public class LocalDateTimeJsfConverterTest {
 
 	@Test
 	public void testGetAsObject() {
-		final Object asObject = target.getAsObject(null, null, stringDate);
-		System.out.println(asObject);
+		LocalDateTime asObject = (LocalDateTime) target.getAsObject(null, null, stringDate);
+		System.out.println("Converted to LocalDateTime: " + asObject);
+		assertEquals(2015, asObject.getYear());
+		assertEquals(19, asObject.getHour());
 	}
 
 	@Test
 	public void testGetAsString() {
 		final String asString = target.getAsString(null, null, localDateTime);
-		System.out.println(asString);
+		System.out.println("Converted to String" + asString);
 		assertEquals(stringDate, asString);
 	}
-
 }
