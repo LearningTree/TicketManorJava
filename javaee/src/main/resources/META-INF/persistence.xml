@@ -29,6 +29,7 @@
 	<class>com.ticketmanor.model.Member</class>
 	<class>com.ticketmanor.model.Movie</class>
 	<class>com.ticketmanor.model.Order</class>
+	<class>com.ticketmanor.model.OrderItem</class>
 	<class>com.ticketmanor.model.Person</class>
 	<class>com.ticketmanor.model.Ticket</class>
 	<class>com.ticketmanor.model.Venue</class>
