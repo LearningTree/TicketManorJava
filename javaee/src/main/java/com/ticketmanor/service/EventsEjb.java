@@ -1,8 +1,8 @@
 package com.ticketmanor.service;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Local;
@@ -13,11 +13,13 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Location;
+import com.ticketmanor.model.jpa.LocalDateTimePersistenceConverter;
 
 @Stateless
 @Local @Remote
@@ -26,22 +28,28 @@ public class EventsEjb {
 	@PersistenceContext EntityManager em;
 	
 	public List<Event> getAllEvents() {
-		Query q = em.createQuery("from Event e");
-		return q.getResultList();
+		final TypedQuery<Event> query = 
+				em.createQuery("from Event e", Event.class);
+		return query.getResultList();
 	}
 	
 	/** Get a list of Events on the given date */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
-		Query q = em.createQuery("from Event e where e.date like " + selectedDate);
+		final TypedQuery<Event> q = 
+				em.createQuery("from Event e where e.date like " + selectedDate,
+				Event.class);
 		return q.getResultList();
 	}
 	
 	/** Get events that will occur in the next 'n' days */
 	public List<Event> getEventsNextNDays(int nDays) {
-		LocalDate start = LocalDate.now();
-		LocalDate end = LocalDate.from(start).plusDays(nDays);
-		Query q = em.createQuery("from Event e where e.date <= " + start + " AND e.date >= " + end);
-		return q.getResultList();
+		LocalDateTime start = LocalDateTime.now();
+		LocalDateTime end = LocalDateTime.from(start).plusDays(nDays);
+		return em
+				.createQuery("from Event e where e.date >= ?1 AND e.date <= ?2", Event.class)
+				.setParameter(1, start)
+				.setParameter(2, end)
+				.getResultList();
 	}
 
 	@GET

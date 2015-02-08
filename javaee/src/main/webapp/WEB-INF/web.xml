@@ -15,4 +15,8 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.web</url-pattern>
 	</servlet-mapping>
+	
+	<listener>
+	    <listener-class>com.ticketmanor.jpa.FakeDataLoaderListener</listener-class>
+	</listener>
 </web-app>

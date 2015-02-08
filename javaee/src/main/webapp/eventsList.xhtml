@@ -21,9 +21,16 @@
 				<p:dataTable rendered="#{!empty eventsBean.resultList}"
 					var="event" value="#{eventsBean.resultList}">
 					<p:column>
-						<f:facet name="header">Date>
-						#{event.date}
-						</f:facet>
+						<f:facet name="header">Date</f:facet>
+						<h:outputText value="#{event.date}"/>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Act</f:facet>
+						<h:outputText value="#{event.what}"/>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Place</f:facet>
+						<h:outputText value="#{event.where}"/>
 					</p:column>
 				</p:dataTable>
 			</ui:define>
