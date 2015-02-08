@@ -14,25 +14,15 @@ import com.ticketmanor.model.Sellable;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Recording implements Sellable, Serializable {
+public abstract class Recording extends Sellable implements Serializable {
 
 	private static final long serialVersionUID = 129287912L;
-	private int id;
 	protected String title;
 	protected double price;
 	int version;
 	
 	public Recording() {
 		version = 0;
-	}
-	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	@Version

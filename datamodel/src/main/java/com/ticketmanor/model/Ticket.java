@@ -11,12 +11,10 @@ import javax.xml.bind.annotation.*;
  */
 @Entity @Table(name="tickets")
 @XmlRootElement
-public class Ticket implements Sellable, Serializable {
+public class Ticket extends Sellable implements Serializable {
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	long id;
 	/** The Event that this ticket is for. */
-	@NotNull Event event;
+	@ManyToOne @NotNull Event event;
 	/** The seat number that this Ticket is for; null means non-reserved seating */
 	String seatNumber;
 	/** The price of this seat, in dollars and cents */
@@ -34,15 +32,7 @@ public class Ticket implements Sellable, Serializable {
 	public void setSeatNumber(String seatNumber) {
 		this.seatNumber = seatNumber;
 	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	public long getId() {
-		return id;
-	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
