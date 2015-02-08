@@ -1,6 +1,5 @@
 package com.ticketmanor.service;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,14 +11,12 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Location;
-import com.ticketmanor.model.jpa.LocalDateTimePersistenceConverter;
 
 @Stateless
 @Local @Remote
