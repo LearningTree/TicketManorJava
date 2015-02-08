@@ -18,7 +18,10 @@ public class Venue   {
 	
 	String name;
 	/** The location */
-	String streetAddress, city, provState, country;
+	String streetAddress, 
+		city, 
+		provState, 
+		country;
 	/** The Geometry coordinates; N.B. May be null! */
 	Double lat, lng;
 	

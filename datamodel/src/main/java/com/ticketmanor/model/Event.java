@@ -20,7 +20,7 @@ public class Event   {
 	@Column(name="date_time")
 	LocalDateTime date;
 	/** The Venue at which the event takes place. */
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	Venue venue;
 	
 	public Event(Act act, LocalDateTime dateTime, Venue venue) {
