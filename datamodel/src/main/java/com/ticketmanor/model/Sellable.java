@@ -2,5 +2,6 @@ package com.ticketmanor.model;
 
 /** Interface that all sellable products implement */
 public interface Sellable {
-	// Empty for now
+	/** Get the price of quantity one of this item */
+	double getPrice();
 }

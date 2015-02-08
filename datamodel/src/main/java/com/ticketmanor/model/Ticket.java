@@ -12,6 +12,27 @@ import javax.xml.bind.annotation.*;
 @Entity @Table(name="tickets")
 @XmlRootElement
 public class Ticket implements Sellable, Serializable {
+	public Event getEvent() {
+		return event;
+	}
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+	public String getSeatNumber() {
+		return seatNumber;
+	}
+	public void setSeatNumber(String seatNumber) {
+		this.seatNumber = seatNumber;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public long getId() {
+		return id;
+	}
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	/** The Event that this ticket is for. */

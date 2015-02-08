@@ -15,5 +15,5 @@ public class Order   {
 	@ManyToOne
 	Member member;
 	@OneToMany
-	List<Ticket> tickets = new ArrayList<>();
+	List<OrderItem> items = new ArrayList<>();
 }
