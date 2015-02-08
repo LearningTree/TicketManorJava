@@ -21,12 +21,12 @@ public class Event   {
 	LocalDateTime date;
 	/** The Venue at which the event takes place. */
 	@ManyToOne
-	Venue where;
+	Venue venue;
 	
-	public Event(Act act, LocalDateTime dateTime, Venue where) {
+	public Event(Act act, LocalDateTime dateTime, Venue venue) {
 		this.what = act;
 		this.date = dateTime;
-		this.where = where;
+		this.venue = venue;
 	}
 	
 	public Event() {
@@ -34,11 +34,7 @@ public class Event   {
 	}
 
 	public String toString() {
-		return what + "@" + date + " " + where;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+		return what + "@" + date + " " + venue;
 	}
 
 	public long getId() {
@@ -53,8 +49,8 @@ public class Event   {
 		return date;
 	}
 
-	public Venue getWhere() {
-		return where;
+	public Venue getVenue() {
+		return venue;
 	}
 
 	@Override
@@ -63,7 +59,7 @@ public class Event   {
 		int result = 1;
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		result = prime * result + ((what == null) ? 0 : what.hashCode());
-		result = prime * result + ((where == null) ? 0 : where.hashCode());
+		result = prime * result + ((venue == null) ? 0 : venue.hashCode());
 		return result;
 	}
 
@@ -86,10 +82,10 @@ public class Event   {
 				return false;
 		} else if (!what.equals(other.what))
 			return false;
-		if (where == null) {
-			if (other.where != null)
+		if (venue == null) {
+			if (other.venue != null)
 				return false;
-		} else if (!where.equals(other.where))
+		} else if (!venue.equals(other.venue))
 			return false;
 		return true;
 	}

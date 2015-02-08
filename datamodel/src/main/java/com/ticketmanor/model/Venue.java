@@ -6,7 +6,6 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
-
 /*
  * Venue - A place where Events happen. Some (such as modern movie theatres) have more than one Auditorium;
  * others (such as large concert halls) do not.
@@ -29,4 +28,8 @@ public class Venue   {
 	public String toString() {
 		return name;
 	};
+	
+	public long getId() {
+		return id;
+	}
 }
