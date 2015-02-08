@@ -26,11 +26,15 @@
 					</p:column>
 					<p:column>
 						<f:facet name="header">Act</f:facet>
-						<h:outputText value="#{event.what}"/>
+						<a href="eventDetails.web?id=#{event.id}">
+							<h:outputText value="#{event.what}"/>
+						</a>
 					</p:column>
 					<p:column>
 						<f:facet name="header">Place</f:facet>
-						<h:outputText value="#{event.where}"/>
+						<a href="venueDetails.web?id=#{event.venue.id}">
+							<h:outputText value="#{event.venue}"/>
+						</a>
 					</p:column>
 				</p:dataTable>
 			</ui:define>
