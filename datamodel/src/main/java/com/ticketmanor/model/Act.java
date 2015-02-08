@@ -1,6 +1,7 @@
 package com.ticketmanor.model;
 
 import java.util.List;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -71,5 +72,10 @@ public class Act   {
 	
 	public Act(ActType type) {
 		this.type = type;
+	}
+	
+	@Override
+	public String toString() {
+		return title;
 	}
 }

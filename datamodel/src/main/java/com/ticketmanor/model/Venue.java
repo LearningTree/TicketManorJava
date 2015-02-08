@@ -27,6 +27,6 @@ public class Venue   {
 	Set<Auditorium> auditoria = new HashSet<>();
 	
 	public String toString() {
-		return "Venue(" + name + ")";
+		return name;
 	};
 }
