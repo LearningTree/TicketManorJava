@@ -15,7 +15,7 @@ import org.junit.Test;
 import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Movie;
 
-public class EjbTest {
+public class EventsEjbTest {
 
 	@Test @Ignore("no provider found!")
 	public void test() throws Exception {

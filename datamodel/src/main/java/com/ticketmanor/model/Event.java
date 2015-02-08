@@ -1,8 +1,8 @@
 package com.ticketmanor.model;
 
 import java.time.*;
-import javax.persistence.*;
 
+import javax.persistence.*;
 /*
  * Event - An Event is one act at one time at one Venue
  */
@@ -55,5 +55,42 @@ public class Event   {
 
 	public Venue getWhere() {
 		return where;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((what == null) ? 0 : what.hashCode());
+		result = prime * result + ((where == null) ? 0 : where.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Event other = (Event) obj;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (what == null) {
+			if (other.what != null)
+				return false;
+		} else if (!what.equals(other.what))
+			return false;
+		if (where == null) {
+			if (other.where != null)
+				return false;
+		} else if (!where.equals(other.where))
+			return false;
+		return true;
 	}
 }

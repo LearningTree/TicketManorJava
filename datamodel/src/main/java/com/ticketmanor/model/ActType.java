@@ -6,5 +6,7 @@ public enum ActType {
 	/** A live dramatic event */
 	PLAY,
 	/** A live musical performance */
-	MUSICAL
+	MUSICAL,
+	/** A sporting event */
+	SPORTS
 }
