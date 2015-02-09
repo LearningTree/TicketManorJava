@@ -6,9 +6,18 @@
 
 <ui:composition template="../template/standard.xhtml">
 
-	<div class="text">Welcome Administrator</div>
+	<ui:define name="pageTitle">Administration</ui:define>
 
-	<h:outputText value="If you can see this page, you now have unlimited power over this data! Mwahahah!!"/>
+	<ui:define name="pageHeader">Administration</ui:define>
+
+	<ui:define name="body">
+
+		<div class="text">Welcome Administrator</div>
+
+		<h:outputText 
+		value="If you can see this page, you now have unlimited power over this data! Mwahahah!!"/>
+
+	</ui:define>
 
 </ui:composition>
 </html>
