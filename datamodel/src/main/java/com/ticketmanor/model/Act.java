@@ -62,8 +62,8 @@ public class Act   {
 		this.notes = notes;
 	}
 
-	/** A list of recordings related to this Act that we can sell */
-	// Need to import the Recording hierarchy
+	/** A list of recordings related to this Act that we can sell;
+	 * can be movie soundtracks, music videos, etc. */
 	// List<Recording> discography;
 	
 	public Act() {
