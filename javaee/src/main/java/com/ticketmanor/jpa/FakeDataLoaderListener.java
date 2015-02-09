@@ -15,7 +15,7 @@ public class FakeDataLoaderListener implements ServletContextListener {
 
 	@EJB FakeDataLoaderEjb ejb;
 	
-	@PostConstruct
+	@Override
 	public void contextInitialized(ServletContextEvent ctx) {
 		System.out.println("FakeEventLoader.contextInitialized()");
 		ejb.loadFakeData();
@@ -23,6 +23,6 @@ public class FakeDataLoaderListener implements ServletContextListener {
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		// TODO Auto-generated method stub
+		// Empty
 	}
 }
