@@ -74,6 +74,11 @@ public class Act   {
 		this.type = type;
 	}
 	
+	public Act(ActType type, String title) {
+		this.type = type;
+		this.title = title;
+	}
+	
 	@Override
 	public String toString() {
 		return title;

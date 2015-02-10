@@ -20,6 +20,16 @@ public class Ticket extends Sellable implements Serializable {
 	/** The price of this seat, in dollars and cents */
 	@NotNull Double price;
 	
+	public Ticket(Event event, String seatNumber, Double price) {
+		this.event = event;
+		this.seatNumber = seatNumber;
+		this.price = price;
+	}
+	
+	public Ticket() {
+		
+	}
+	
 	public Event getEvent() {
 		return event;
 	}

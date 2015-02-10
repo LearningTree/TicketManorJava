@@ -18,14 +18,14 @@ public class Event   {
 	Act what;
 	/** When this ticket is for (to the minute, e.g., 2014-11-11T11:11) */
 	@Column(name="date_time")
-	LocalDateTime date;
+	private LocalDateTime date;
 	/** The Venue at which the event takes place. */
 	@ManyToOne
 	Venue venue;
 	
 	public Event(Act act, LocalDateTime dateTime, Venue venue) {
 		this.what = act;
-		this.date = dateTime;
+		this.setDate(dateTime);
 		this.venue = venue;
 	}
 	
@@ -34,7 +34,7 @@ public class Event   {
 	}
 
 	public String toString() {
-		return what + "@" + date + " " + venue;
+		return what + "@" + getDate() + " " + venue;
 	}
 
 	public long getId() {
@@ -43,6 +43,9 @@ public class Event   {
 
 	public Act getWhat() {
 		return what;
+	}
+	public void setWhat(Act what) {
+		this.what = what;
 	}
 
 	public LocalDateTime getDate() {
@@ -57,7 +60,7 @@ public class Event   {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((getDate() == null) ? 0 : getDate().hashCode());
 		result = prime * result + ((what == null) ? 0 : what.hashCode());
 		result = prime * result + ((venue == null) ? 0 : venue.hashCode());
 		return result;
@@ -72,10 +75,10 @@ public class Event   {
 		if (getClass() != obj.getClass())
 			return false;
 		Event other = (Event) obj;
-		if (date == null) {
-			if (other.date != null)
+		if (getDate() == null) {
+			if (other.getDate() != null)
 				return false;
-		} else if (!date.equals(other.date))
+		} else if (!getDate().equals(other.getDate()))
 			return false;
 		if (what == null) {
 			if (other.what != null)
@@ -88,5 +91,9 @@ public class Event   {
 		} else if (!venue.equals(other.venue))
 			return false;
 		return true;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
 	}
 }
