@@ -8,6 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * FeedbackForm records a feedback item, complaint,
+ * suggestion, etc., from a (real or potential) customer.
+ * Since we don't require signup yet for this, we don't
+ * have a ManyToOne with Person; just use a String.
+ * @author Ian Darwin
+ */
 @Entity
 public class FeedbackForm implements Serializable {
 
