@@ -1,0 +1,1 @@
+This exists to prevent git losing the folder, since Maven projects require it.
