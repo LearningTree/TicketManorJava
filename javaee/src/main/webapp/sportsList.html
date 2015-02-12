@@ -13,7 +13,7 @@
   <div id="wrapper">
 	<a id="logo" href="/">&nbsp;</a>
 	<ul id="nav">
-	  <li><a href="index.web">Home</a></li>
+	  <li><a href="index.html">Home</a></li>
 	  <li class="active"><a href="sports.web">Sports</a></li>
 	  <li><a href="eventsSearch.web">Concerts</a></li>
 	  <li><a href="movies.web">Movies</a></li>
@@ -41,7 +41,7 @@
   </script>
 
   <script type="text/x-handlebars" id="index">
-    <table border='1'>
+    <table border='1' width='80%'>
     <tr><th>Date</th><th>Event</th><th>Venue</th></tr>
     {{#each item in model}}
       <tr><td>{{item.date}}</td><td>{{item.title}}</td><td>{{item.venue}}</td></tr>
