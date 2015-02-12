@@ -25,7 +25,7 @@ public class FeedbackForm implements Serializable {
 	
 	String custName;
 	String custEmail;
-	LocalDateTime date;
+	LocalDateTime date = LocalDateTime.now();
 	String comment;
 	
 	/**
