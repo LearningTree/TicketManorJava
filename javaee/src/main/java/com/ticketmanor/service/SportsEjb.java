@@ -15,27 +15,31 @@ import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
+import com.ticketmanor.model.ActType;
 import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Location;
 
-/** Slightly mis-named; should be ConcertsEjb */
 @Stateless
 @Local @Remote
-@Path("eventsEjb")
-public class EventsEjb {
+@Path("sportsEjb")
+public class SportsEjb {
 	@PersistenceContext EntityManager em;
+	final ActType typeSports = ActType.SPORTS;
 	
 	public List<Event> getAllEvents() {
 		final TypedQuery<Event> query = 
-				em.createQuery("from Event e", Event.class);
+				em.createQuery("from Event e where e.what.type = ?1", Event.class);
+		query.setParameter(1, typeSports);
 		return query.getResultList();
 	}
 	
 	/** Get a list of Events on the given date */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
 		final TypedQuery<Event> q = 
-				em.createQuery("from Event e where e.date like " + selectedDate,
-				Event.class);
+				em.createQuery("from Event e where e.date like " + selectedDate +
+					"AND e.what.type = ?1",
+					Event.class);
+		q.setParameter(1, typeSports);
 		return q.getResultList();
 	}
 	
@@ -44,9 +48,10 @@ public class EventsEjb {
 		LocalDateTime start = LocalDateTime.now();
 		LocalDateTime end = LocalDateTime.from(start).plusDays(nDays);
 		return em
-				.createQuery("from Event e where e.date >= ?1 AND e.date <= ?2", Event.class)
-				.setParameter(1, start)
-				.setParameter(2, end)
+				.createQuery("from Event e where e.what.type = ?1 AND e.date >= ?2 AND e.date <= ?3", Event.class)
+				.setParameter(1, typeSports)
+				.setParameter(2, start)
+				.setParameter(3, end)
 				.getResultList();
 	}
 

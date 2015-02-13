@@ -16,8 +16,10 @@ public class EventsBean {
 	EventsEjb ejb;
 
 	List<Event> results;
+
+	static final int DEFAULT_NDAYS = 5;
 	
-	private int nDays;
+	private int nDays = DEFAULT_NDAYS;
 	
 	/** A JSF Action handler should return the next page path as a String */
 	public String getEventsNextNDays() {
