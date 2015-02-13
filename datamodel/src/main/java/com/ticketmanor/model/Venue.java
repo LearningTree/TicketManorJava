@@ -28,11 +28,23 @@ public class Venue   {
 	@OneToMany(mappedBy="venue")
 	Set<Auditorium> auditoria = new HashSet<>();
 	
+	public Venue() {
+		// empty
+	}
+	
+	public Venue(String name) {
+		this.name = name;
+	}
+	
 	public String toString() {
 		return name;
 	};
 	
 	public long getId() {
 		return id;
+	}
+	
+	public String getName() {
+		return name;
 	}
 }
