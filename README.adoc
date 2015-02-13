@@ -28,7 +28,7 @@ a Maven plug-in that knows how to run Gradle).
 
 The server projects are configured to deploy with the EE Server WildFly 8+
 
-You MUST change the file ${WILDFLYHOME}/standalone/configuration/standalone.sh to have
+You MUST change the file ${WILDFLYHOME}/standalone/configuration/standalone.xml AND standalone-full.xml to have
 a datasource named TicketManorDataSource.  For initial testing I just added:
 
 	<datasource jndi-name="java:jboss/datasources/TicketManorDataSource" pool-name="TicketManorPool" 
@@ -41,7 +41,7 @@ a datasource named TicketManorDataSource.  For initial testing I just added:
 		</security>
 	</datasource>
 
-We will need to change this to MySQL or a real database before deployment.
+We should someday change this to MySQL or a real database before deployment.
 
 === Naming Conventions
 
