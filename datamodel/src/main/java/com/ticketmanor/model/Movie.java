@@ -2,10 +2,11 @@ package com.ticketmanor.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+@XmlRootElement @JsonIgnoreProperties(ignoreUnknown=true)
 @Entity @Table(name="movies")
 public class Movie extends Act {
 	
@@ -21,7 +22,6 @@ public class Movie extends Act {
 	public Movie() {
 		// required by JPA
 	}
-	
 	
 	public String getDirector() {
 		return director;
