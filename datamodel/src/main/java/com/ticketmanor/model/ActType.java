@@ -1,5 +1,8 @@
 package com.ticketmanor.model;
 
+/*
+ * One type of Act (something people want to see), such as a Movie, a Musical, a Sports event, etc.
+ */
 public enum ActType {
 	/** A cinematic event */
 	MOVIE,
