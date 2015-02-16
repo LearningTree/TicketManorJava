@@ -26,6 +26,7 @@
 	<class>com.ticketmanor.model.Admin</class>
 	<class>com.ticketmanor.model.Auditorium</class>
 	<class>com.ticketmanor.model.Event</class>
+	<class>com.ticketmanor.model.FeedbackForm</class>
 	<class>com.ticketmanor.model.Member</class>
 	<class>com.ticketmanor.model.Movie</class>
 	<class>com.ticketmanor.model.Order</class>

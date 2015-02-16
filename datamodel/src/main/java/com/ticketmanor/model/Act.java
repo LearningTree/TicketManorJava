@@ -2,13 +2,22 @@ package com.ticketmanor.model;
 
 import java.util.List;
 
-import javax.persistence.*;
-import javax.xml.bind.annotation.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /*
  * An Act is one entity that people pay to see: A movie, a soloist, a troupe, a rock group, an orchestra...
  */
-@XmlRootElement
+@XmlRootElement @JsonIgnoreProperties(ignoreUnknown=true)
 @Entity @Table(name="acts")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Act   {
