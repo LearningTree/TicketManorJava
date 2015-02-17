@@ -1,6 +1,6 @@
 package com.ticketmanor.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 /*
  * Admin - XXX

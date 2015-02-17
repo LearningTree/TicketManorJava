@@ -93,7 +93,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + getFullName();
+		return getClass().getSimpleName() + ' ' + getFullName();
 	}
 
 	@Transient

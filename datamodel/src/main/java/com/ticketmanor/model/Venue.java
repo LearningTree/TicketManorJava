@@ -3,8 +3,13 @@ package com.ticketmanor.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
-import javax.xml.bind.annotation.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /*
  * Venue - A place where Events happen. Some (such as modern movie theatres) have more than one Auditorium;

@@ -1,13 +1,14 @@
 package com.ticketmanor.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 import java.io.StringWriter;
 import java.time.LocalDateTime;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ticketmanor.model.Act;
 import com.ticketmanor.model.ActType;
 import com.ticketmanor.model.Event;
