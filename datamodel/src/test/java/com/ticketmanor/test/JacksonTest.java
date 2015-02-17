@@ -1,5 +1,7 @@
 package com.ticketmanor.test;
 
+import static org.junit.Assert.*;
+
 import java.io.StringWriter;
 import java.time.LocalDateTime;
 
@@ -24,8 +26,14 @@ public class JacksonTest {
         System.out.println("Read and parsed Person from JSON: " + q);
 
         Person p = new Person("Roger", "Rabbit");                // <3>
-        System.out.print("Person object " + p +" as JSON = ");
-        mapper.writeValue(System.out, p);
+        StringWriter sout = new StringWriter();
+        mapper.writeValue(sout, p);
+        sout.close();
+        String expected =
+        	"{\"id\":0,\"firstName\":\"Roger\",\"middles\":null,\"lastName\":\"Rabbit\",\"email\":null,\"address\":null,\"fullName\":\"Roger Rabbit\"}";
+        final String actual = sout.getBuffer().toString();
+        System.out.println("Person object " + p +" as JSON = " + actual);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
@@ -38,8 +46,10 @@ public class JacksonTest {
 		mapper.writeValue(sout, evt);
 		sout.close();
 		String result = sout.getBuffer().toString();
-		System.out.println("Converted value is " + result);
+		System.out.println("Serialized Event is " + result);
 		Event nEvt = mapper.readValue(result, Event.class);
 		System.out.println("Reconstituted Event is " + nEvt);
+		assertEquals(nEvt.getWhat().getTitle(), "The Flying Wallendas");
+		assertSame(nEvt.getWhat().getType(), ActType.TROUPE);
 	}
 }
