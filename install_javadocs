@@ -1,0 +1,6 @@
+rm -r ~/crs936/apidocs
+mkdir ~/crs936/apidocs
+(cd datamodel; mvn package)
+mv datamodel/target/apidocs ~/crs936/apidocs/datamodel
+(cd javaee; mvn package)
+mv javaee/target/apidocs ~/crs936/apidocs/javaee
