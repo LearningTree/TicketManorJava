@@ -12,7 +12,7 @@ import org.codehaus.jackson.map.SerializerProvider;
 public class MyLocalDateTimeSerializer extends JsonSerializer<LocalDateTime>{
 
 	protected static final DateTimeFormatter DATE_FORMATTER = 
-	       DateTimeFormatter.ofPattern("dd-MM-yyyyThh:mm");
+	       DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm a");
 
 	@Override
 	public void serialize(LocalDateTime data, JsonGenerator gen,
