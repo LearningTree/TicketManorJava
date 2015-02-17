@@ -1,12 +1,24 @@
 package com.ticketmanor.model;
 
-import java.time.*;
+import java.time.LocalDateTime;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 /*
  * Event - An Event is one act at one time at one Venue
  */
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+import com.ticketmanor.model.jackson.MyLocalDateTimeDeserializer;
+import com.ticketmanor.model.jackson.MyLocalDateTimeSerializer;
 
 @XmlRootElement
 @Entity @Table(name="events")
@@ -16,8 +28,10 @@ public class Event   {
 	/** The Act; may be a movie, a troupe, a rock group, etc. */
 	@ManyToOne
 	Act what;
-	/** When this ticket is for (to the minute, e.g., 2014-11-11T11:11) */
+	/** When this Event is scheduled for (to the minute, e.g., 2014-11-11T11:11) */
 	@Column(name="date_time")
+	@JsonSerialize(using = MyLocalDateTimeSerializer.class)
+	@JsonDeserialize(using = MyLocalDateTimeDeserializer.class)
 	private LocalDateTime date;
 	/** The Venue at which the event takes place. */
 	@ManyToOne
@@ -50,6 +64,9 @@ public class Event   {
 
 	public LocalDateTime getDate() {
 		return date;
+	}
+	public void setDate(LocalDateTime date) {
+		this.date = date;
 	}
 
 	public Venue getVenue() {
@@ -91,9 +108,5 @@ public class Event   {
 		} else if (!venue.equals(other.venue))
 			return false;
 		return true;
-	}
-
-	public void setDate(LocalDateTime date) {
-		this.date = date;
 	}
 }
