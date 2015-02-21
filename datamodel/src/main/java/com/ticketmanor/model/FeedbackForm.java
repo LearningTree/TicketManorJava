@@ -11,7 +11,7 @@ import javax.persistence.Id;
 /**
  * FeedbackForm records a feedback item, complaint,
  * suggestion, etc., from a (real or potential) customer.
- * Since we don't require signup yet for this, we don't
+ * Since we don't require end-users to sign up just for this, we don't
  * have a ManyToOne with Person; just use a String.
  * @author Ian Darwin
  */
@@ -53,6 +53,8 @@ public class FeedbackForm implements Serializable {
 		return id;
 	}
 
+	@SuppressWarnings("unused")
+	/** For JPA */
 	private void setId(long id) {
 		this.id = id;
 	}
