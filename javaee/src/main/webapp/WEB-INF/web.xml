@@ -26,6 +26,6 @@
 	    <listener-class>com.ticketmanor.jpa.FakeDataLoaderListener</listener-class>
 	</listener>
 
-	<!-- This would be a good place to add security constraints and the like -->
+	<!-- TODO here is a good place to install some security configuration stuff -->
 
 </web-app>
