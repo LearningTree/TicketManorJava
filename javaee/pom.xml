@@ -37,6 +37,11 @@
 			<artifactId>primefaces</artifactId>
 			<version>4.0</version>
 		</dependency>
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0</version>
+		</dependency>
 
 		<!-- Hibernate not needed in WildFly as it is included, but prob. needed on other App Servers-->
 		<dependency>

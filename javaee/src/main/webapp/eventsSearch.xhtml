@@ -28,6 +28,19 @@
 					
 				</h:form>
 				<!-- The results will show up on eventsList.web -->
+
+				<p:panel>
+					<f:facet name="header">Concerts  News</f:facet>
+					<p:feedReader value="http://rss.news.yahoo.com/rss/music" var="news" size="5">
+						<h:outputText value="#{news.title}" style="font-weight: bold;display:block"/>
+						<h:outputText value="#{news.description.value}" escape="false"/>
+						<p:separator />
+						<f:facet name="error">
+							Unable to access news feed at this time.
+						</f:facet>
+					</p:feedReader>
+					<p>News Feed Courtesy of Yahoo.com</p>
+				</p:panel>
 			</ui:define>
 		</ui:composition>
 	</body>

@@ -18,6 +18,19 @@
 				
 				<a href="sportsList.html">Sports Events Listing</a>
 
+				<p:panel>
+					<f:facet name="header">Sports News</f:facet>
+					<p:feedReader value="http://rss.news.yahoo.com/rss/sports" var="news" size="5">
+						<h:outputText value="#{news.title}" style="font-weight: bold;display:block"/>
+						<h:outputText value="#{news.description.value}" escape="false"/>
+						<p:separator />
+						<f:facet name="error">
+							Unable to access news feed at this time.
+						</f:facet>
+					</p:feedReader>
+					<p>News Feed Courtesy of Yahoo.com</p>
+				</p:panel>
+
 			</ui:define>
 		</ui:composition>
 	</body>
