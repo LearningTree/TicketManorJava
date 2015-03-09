@@ -43,6 +43,21 @@ a datasource named TicketManorDataSource.  For initial testing I just added:
 
 We should someday change this to MySQL or a real database before deployment.
 
+N.B. Never give the production app unfettered access to the database;
+limit it by doing something like this (commands are from PostgreSQL but
+will be similar on other DB products):
+
+----
+website=# create role myAppAcct login password 'siuojk21jsr';
+CREATE ROLE
+website=# grant select,insert on someTable to myAppAcct;
+GRANT
+website=# 
+----
+
+You might need a few other perms if JPA/Hibernate is running in "create" or "update" mode,
+but these modes should not really be used in production!
+
 === Naming Conventions
 
 In the Java code:
