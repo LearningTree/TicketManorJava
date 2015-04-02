@@ -26,7 +26,7 @@ a Maven plug-in that knows how to run Gradle).
 
 .*Build*
 image:http://img.shields.io/badge/license-BSD2-green.svg[link="http://github.com/LearningTree/TicketManorJava"]
-image:https://img.shields.io/badge/maven-Built With-pink.svg[link="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22darwinsys-api%22"]
+image:https://img.shields.io/badge/maven-Standard Builds-pink.svg[link="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22darwinsys-api%22"]
 
 == Deployment
 
