@@ -25,8 +25,8 @@ The top-level Maven pom runs each of the other projects (including android, thro
 a Maven plug-in that knows how to run Gradle).
 
 .*Build*
-image:http://img.shields.io/badge/license-BSD2-green.svg[link="http://github.com/LearningTree/TicketManorJava/LICENSE"]
-image:https://img.shields.io/badge/maven-Standard Builds-pink.svg[http://github.com/LearningTree/TicketManorJava/pom.xml"]
+image:http://img.shields.io/badge/license-BSD2-green.svg[link="https://github.com/LearningTree/TicketManorJava/blob/master/LICENSE"]
+image:https://img.shields.io/badge/maven-Standard Builds-pink.svg[https://github.com/LearningTree/TicketManorJava/blob/master/pom.xml"]
 
 == Deployment
 
