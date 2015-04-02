@@ -1,4 +1,4 @@
-== TicketManor
+= TicketManor
 
 This is a demo application of building enterprise applications using Java EE. There are 
 a variety of APIs used, e.g., Java EE (JPA, EJB), Spring Framework, modern SPA Web (Angular, Ember.JS),
@@ -15,7 +15,7 @@ be implemented. WE ARE NOT ACTUALLY SELLING ANY TICKETS.
 This site is *not* affiliated in any way with http://ticketmaster.com/[TicketMaster(TM)] nor any
 other commercial ticket selling organization.
 
-=== Building
+== Building
 
 The Java projects generally use Eclipse to write/compile/test code and Maven to build/package.
 The Android project uses Android Studio (based on IntelliJ IDea) to write code
@@ -24,7 +24,11 @@ and Gradle to compile/test/package.
 The top-level Maven pom runs each of the other projects (including android, through
 a Maven plug-in that knows how to run Gradle).
 
-=== Deployment
+.*Build*
+image:http://img.shields.io/badge/license-BSD2-green.svg[link="http://github.com/LearningTree/TicketManorJava"]
+image:https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg"[link="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22darwinsys-api%22"]
+
+== Deployment
 
 The server projects are configured to deploy with the EE Server WildFly 8+
 
@@ -58,7 +62,7 @@ website=#
 You might need a few other perms if JPA/Hibernate is running in "create" or "update" mode,
 but these modes should not really be used in production!
 
-=== Naming Conventions
+== Naming Conventions
 
 In the Java code:
 
@@ -66,14 +70,14 @@ In the Java code:
 * *Resource means a RESTful web service endpoint;
 * *Ejb (or *EJB) of course represents an Enterprise JavaBean.
 
-=== ToDos
+== ToDos
 
-==== Basics
+=== Basics
 
 Use http://www.stateofflow.com/journal/66/creating-java-projects-programmatically to create Eclipse
 projects for different courses.
 
-==== Beyond The Basics
+=== Beyond The Basics
 
 The following is IN ADDITION to getting
 the basic functionality working across all the designated APIs
@@ -83,6 +87,6 @@ for IDEAS than an actual list of steps to do.
 * Digest an RSS feed of new movies, concerts, acts, and load into the database.
 * "Sync Instance" feature to update the database from a master copy on the Internet.
 
-==== Cross-Platformality
+=== Cross-Platformality
 
 Maybe use https://github.com/google/j2objc/[j2objc] to make iOS versions of at least the Model classes.
