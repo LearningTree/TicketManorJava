@@ -19,7 +19,7 @@ public class ShoppingCartEjb {
 	/** Add the item to the cart; if the card already has an OrderItem
 	 * for this Sellable we increment its quantity, else, we make
 	 * a new OrderItem for it, and stash that in the card.
-	 * @param s
+	 * @param s The Sellable item (Ticket, Recording, etc.)
 	 */
 	public void addToCart(Sellable s) {
 		for (OrderItem item : cart) {
@@ -31,6 +31,10 @@ public class ShoppingCartEjb {
 		cart.add(new OrderItem(s, 1));
 	}
 	
+	/**
+	 * Remove the given Sellable from the Cart.
+	 * @return True if the remove succeeded, false otherwise.
+	 */
 	public boolean removeFromCart(Sellable s) {
 		Iterator<OrderItem> it = cart.iterator();
 		while (it.hasNext()) {
@@ -43,10 +47,18 @@ public class ShoppingCartEjb {
 		return false;
 	}
 	
+	/**
+	 * Get a list of items in the cart.
+	 * @return a list of items in the cart.
+	 */
 	public List<OrderItem> getOrderItems() {
 		return Collections.unmodifiableList(cart);
 	}
 	
+	/**
+	 * Get the total price of objects in the cart.
+	 * @return The price in $ of all items.
+	 */
 	public double getTotalPrice() {
 		double total = 0;
 		for (OrderItem item : cart) {

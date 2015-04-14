@@ -21,13 +21,19 @@ public class EventsBean {
 	
 	private int nDays = DEFAULT_NDAYS;
 	
-	/** A JSF Action handler should return the next page path as a String */
+	/**
+	 * A JSF Action handler should return the next page path as a String.
+	 * @return The Outcome, a string representing the next View page
+	 */
 	public String getEventsNextNDays() {
 		results = ejb.getEventsNextNDays(nDays);
 		return "eventsList.xhtml";
 	}
 
-	/** This method will be called to retrieve the results */
+	/** 
+	 * This method will be called to retrieve the results
+	 * @return The list of Events.
+	 */
 	public List<Event> getResultList() {
 		return results == null ? Collections.emptyList() : results;
 	}

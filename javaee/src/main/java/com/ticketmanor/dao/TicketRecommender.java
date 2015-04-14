@@ -14,6 +14,9 @@ public class TicketRecommender {
 	
 	/** Get a list of Tickets in the customer's preferred order.
 	 * This is the method you are asked to 'split' in the Exercise.
+	 * @param e the Event you want tickets for.
+	 * @param c The customer the seats are for, used e.g, to get their preferences.
+	 * @return The List of recommended tickets
 	 */
 	public static List<Ticket> getPreferredSeats(Event e, Customer c) {
 		final List<Ticket> availableSeats = dao.getAvailableSeats(e);

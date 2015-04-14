@@ -25,13 +25,20 @@ import com.ticketmanor.model.Location;
 public class EventsEjb {
 	@PersistenceContext EntityManager em;
 	
+	/**
+	 * Get All events
+	 * @return A list of all Events
+	 */
 	public List<Event> getAllEvents() {
 		final TypedQuery<Event> query = 
 				em.createQuery("from Event e", Event.class);
 		return query.getResultList();
 	}
 	
-	/** Get a list of Events on the given date */
+	/** 
+	 * Get a list of Events on the given date
+	 * @return a list of Events for that date
+	 */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
 		final TypedQuery<Event> q = 
 				em.createQuery("from Event e where e.date like " + selectedDate,
@@ -39,7 +46,10 @@ public class EventsEjb {
 		return q.getResultList();
 	}
 	
-	/** Get events that will occur in the next 'n' days */
+	/**
+	 * Get events that will occur in the next 'n' days
+	 * @return A list of Events over the next n days
+	 */
 	public List<Event> getEventsNextNDays(int nDays) {
 		LocalDateTime start = LocalDateTime.now();
 		LocalDateTime end = LocalDateTime.from(start).plusDays(nDays);
@@ -50,18 +60,27 @@ public class EventsEjb {
 				.getResultList();
 	}
 
+	/**
+	 * REST front-end to get events that will occur in the next 'n' days
+	 * @return A list of Events over the next n days
+	 */
 	@GET
 	public List<Event> getEventsNextNDays(int nDays, Location locn) {
 		// XXX Doesn't handle location yet!
 		return getEventsNextNDays(nDays);
 	}
 	
+	/**
+	 * Add an Event to the database
+	 */
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void addEvent(Event event) {
 		em.persist(event);
 	}
 
-
+	/**
+	 * Remove an Event from the database.
+	 */
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteEvent(Event event) {
 		em.remove(event);

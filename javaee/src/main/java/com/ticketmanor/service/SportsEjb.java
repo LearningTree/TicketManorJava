@@ -33,7 +33,11 @@ public class SportsEjb {
 		return query.getResultList();
 	}
 	
-	/** Get a list of Events on the given date */
+	/** 
+	 * Get a list of Events on the given date.
+	 * @param selectedData the date for which the Events are needed.
+	 * @return The list of Events
+	 */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
 		final TypedQuery<Event> q = 
 				em.createQuery("from Event e where e.date like " + selectedDate +
@@ -43,7 +47,11 @@ public class SportsEjb {
 		return q.getResultList();
 	}
 	
-	/** Get events that will occur in the next 'n' days */
+	/** 
+	 * Get events that will occur in the next 'n' days
+	 * @param nDays The date range (next 'n' days) for which the Events are needed.
+	 * @return The list of Events
+	 */
 	public List<Event> getEventsNextNDays(int nDays) {
 		LocalDateTime start = LocalDateTime.now();
 		LocalDateTime end = LocalDateTime.from(start).plusDays(nDays);
@@ -65,7 +73,6 @@ public class SportsEjb {
 	public void addEvent(Event event) {
 		em.persist(event);
 	}
-
 
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteEvent(Event event) {
