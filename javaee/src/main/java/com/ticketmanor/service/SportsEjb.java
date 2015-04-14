@@ -35,7 +35,7 @@ public class SportsEjb {
 	
 	/** 
 	 * Get a list of Events on the given date.
-	 * @param selectedData the date for which the Events are needed.
+	 * @param selectedDate the date for which the Events are needed.
 	 * @return The list of Events
 	 */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
