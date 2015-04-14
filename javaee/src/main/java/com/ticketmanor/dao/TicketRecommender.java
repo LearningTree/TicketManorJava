@@ -22,6 +22,7 @@ public class TicketRecommender {
 		// Collections.sort(availableSeats, (t1,t2)->t1.getPrice() < t2.getPrice() ? -1 : +1);
 		// Here is the simplest pre-Java-8 implementation using an Anonymous Inner Class:
 		Collections.sort(availableSeats, new Comparator<Ticket>() {
+			@Override public
 			int compare(Ticket t1, Ticket t2) { return t1.getPrice() < t2.getPrice() ? -1 : +1; }
 		});
 		return availableSeats; 	// Has been sorted in place
