@@ -33,6 +33,7 @@ public class ShoppingCartEjb {
 	
 	/**
 	 * Remove the given Sellable from the Cart.
+	 * @param s The Sellable to be removed from the Cart.
 	 * @return True if the remove succeeded, false otherwise.
 	 */
 	public boolean removeFromCart(Sellable s) {

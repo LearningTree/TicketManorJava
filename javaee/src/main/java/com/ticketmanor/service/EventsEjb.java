@@ -37,6 +37,7 @@ public class EventsEjb {
 	
 	/** 
 	 * Get a list of Events on the given date
+	 * @param selectedDate The date on which to look for events.
 	 * @return a list of Events for that date
 	 */
 	public List<Event> getEventsForDate(LocalDate selectedDate) {
@@ -48,6 +49,7 @@ public class EventsEjb {
 	
 	/**
 	 * Get events that will occur in the next 'n' days
+	 * @param nDays The range of days (now to 'N' days hence) to look for
 	 * @return A list of Events over the next n days
 	 */
 	public List<Event> getEventsNextNDays(int nDays) {
@@ -62,6 +64,8 @@ public class EventsEjb {
 
 	/**
 	 * REST front-end to get events that will occur in the next 'n' days
+	 * @param nDays The range of days (now to 'N' days hence) to look for
+	 * @param locn The Location in which to look for the events
 	 * @return A list of Events over the next n days
 	 */
 	@GET
@@ -72,6 +76,7 @@ public class EventsEjb {
 	
 	/**
 	 * Add an Event to the database
+	 * @param event The Event object to be added
 	 */
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void addEvent(Event event) {
@@ -80,6 +85,7 @@ public class EventsEjb {
 
 	/**
 	 * Remove an Event from the database.
+	 * @param event The Event object to remove
 	 */
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteEvent(Event event) {
