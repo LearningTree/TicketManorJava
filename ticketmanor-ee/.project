@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>javaee</name>
-	<comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+	<name>ticketmanor-ee</name>
+	<comment>Java EE application for TicketManor</comment>
 	<projects>
 	</projects>
 	<buildSpec>
