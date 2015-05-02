@@ -14,7 +14,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity @Table(name="tickets")
 @XmlRootElement
 public class Ticket extends Sellable implements Serializable {
-	
+
+	private static final long serialVersionUID = -7719242142066576029L;
 	/** The Event that this ticket is for. */
 	@ManyToOne @NotNull Event event;
 	/** The seat number that this Ticket is for; null means non-reserved seating */
