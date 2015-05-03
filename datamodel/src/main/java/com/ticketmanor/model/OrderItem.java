@@ -40,6 +40,6 @@ public class OrderItem {
 	
 	@Override
 	public String toString() {
-		return getSellable() + "x" + getQuantity();
+		return "OrderItem@" + hashCode() + "(" + getSellable() + " qty " + getQuantity() + ")";
 	}
 }
