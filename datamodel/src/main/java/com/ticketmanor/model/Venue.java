@@ -1,5 +1,6 @@
 package com.ticketmanor.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity @Table(name="venues")
 @XmlRootElement
-public class Venue   {
+public class Venue implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	

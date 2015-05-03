@@ -1,5 +1,7 @@
 package com.ticketmanor.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity @Table(name="people")
 @XmlRootElement
 @Inheritance(strategy=InheritanceType.JOINED)
-public class Person {
+public class Person implements Serializable {
+
+	private static final long serialVersionUID = -9182347783644834607L;
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	

@@ -1,5 +1,6 @@
 package com.ticketmanor.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -21,7 +22,9 @@ import com.ticketmanor.model.jackson.MyLocalDateTimeSerializer;
 
 @XmlRootElement
 @Entity @Table(name="events")
-public class Event   {
+public class Event implements Serializable {
+	
+	private static final long serialVersionUID = -9034148502006200557L;
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	/** The Act; may be a movie, a troupe, a rock group, etc. */
