@@ -1,5 +1,7 @@
 package com.ticketmanor.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +12,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity @Table(name="order_items")
-public class OrderItem {
+public class OrderItem implements Serializable {
+
+	private static final long serialVersionUID = 8431243797141861574L;
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	@OneToOne
