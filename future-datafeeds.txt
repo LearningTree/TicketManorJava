@@ -1,11 +1,13 @@
+Sports
+
 http://www.cbc.ca/rss/
 	sports: general mlb nba nfl cfl nhl soccer
-https://sports.yahoo.com/top/rss
-	as above, more.
 http://sports.espn.go.com/espn/news/story?page=rssinfo
 	same
-http://api.eventful.com/
-	** the one **
 
+Events
+
+http://api.eventful.com/
+	Events
 http://musicbrainz.org/ - free download/sync-able (to PostgresQL or MySQL), HUGE database of MusicRecording,
 Artist, etc.
