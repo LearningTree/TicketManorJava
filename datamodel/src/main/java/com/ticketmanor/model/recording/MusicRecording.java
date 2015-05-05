@@ -14,51 +14,48 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.IndexColumn;
 
 /**
- *  This class represents a music recording.  It contains additional
- *  data members for the artist name and a list of tracks (ie songs).
+ * This class represents a music recording.  It contains additional
+ * data members for the artist name and a list of tracks (ie songs).
  *
- *   <pre>
- *     Usage Example:
- *        MusicRecording myRecording = new MusicRecording("John Lennon", myTrackList, "Double Fantasy",
- *   </pre>
+ *  <pre>
+ *    Usage Example:
+ *       MusicRecording myRecording = new MusicRecording("John Lennon", myTrackList, "Double Fantasy",
+ *  </pre>
  *
- *  @author 936 Development Team
- *  @author Ian Darwin modifications for standalone demo.
+ * @author 936 Development Team
+ * @author Ian Darwin modifications for standalone demo.
  */
-
-
 @Entity
 @Table(name="MusicRecordings")
 public class MusicRecording extends Recording {
 
 	private static final long serialVersionUID = -2657285648284489986L;
 
-	/**
-	 *  The name of the artist/band
-	 */
+	/** The name of the artist/band */
 	private String artist;
 
-	/**
-	 *  The list of tracks/songs
-	 */
+	/** The list of tracks/songs */
 	private Track tracks[] = new Track[0];
 
-	/**
-	 *  The recording category
-	 */
+	/** The recording category */
 	private String category;
 
 	/**
-	 *  Default constructor
+	 * Default constructor
 	 */
 	public MusicRecording() {
 		// set the data members using the setter methods
 	}
 
-
 	/**
 	 * Creates a MusicRecording object with given parameter values
 	 * Too complex; should use Builder pattern here.
+	 * @param theArtist the Artist
+	 * @param theTrackList The list of Tracks
+	 * @param theTitle The title
+	 * @param thePrice The price
+	 * @param theCategory The Music Category
+	 * @param theImageName Filename of an image to display
 	 */
 	public MusicRecording(String theArtist, Track[] theTrackList,
 						  String theTitle, double thePrice,
@@ -72,8 +69,12 @@ public class MusicRecording extends Recording {
 	}
 
 	/**
-	 *  Creates a MusicRecording object with given parameter values
-	 *
+	 * Creates a MusicRecording object with given parameter values
+	 * @param theArtist the Artist
+	 * @param theTitle the Title
+	 * @param thePrice The price
+	 * @param theCategory the Music Category
+	 * @param theImageName filename of an image to display
 	 */
 	public MusicRecording(String theArtist,
 						  String theTitle, double thePrice,
@@ -92,7 +93,8 @@ public class MusicRecording extends Recording {
     }
 
 	/**
-	 *  Returns the artist name
+	 * Returns the artist name
+	 * @return  The artist name
 	 */
 	@Column(name="artist_name")
 	public String getArtist() {
@@ -100,18 +102,17 @@ public class MusicRecording extends Recording {
 	}
 
 	/**
-	 *  Sets the artist name
+	 * Sets the artist name
+	 * @param artist The artist name
 	 */
-	public void setArtist(String theArtist) {
-		artist = theArtist;
+	public void setArtist(String artist) {
+		this.artist = artist;
 	}
 
 	/**
-	 *  Returns the recording duration.
-	 *  Overrides the method from Recording.
-	 *
-	 *  Iterates over the list of tracks and keeps a running
-	 *  total of each track's duration.
+	 * Returns the recording duration.
+	 * Iterates over the list of tracks and totals all the tracks' durations.
+	 * @return the recording duration.
 	 */
 	@Transient @Override
 	public Duration getDuration() {
@@ -129,7 +130,7 @@ public class MusicRecording extends Recording {
 	}
 
 	/**
-	 *  Allow us to sort the recordings by artist name
+	 * {@inheritDoc}
 	 */
 	public int compareTo(Object object) {
 
@@ -147,7 +148,7 @@ public class MusicRecording extends Recording {
 		this.category = category;
 	}
 
-	@OneToMany(mappedBy="recordingId", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="recording", cascade=CascadeType.ALL)
 	@IndexColumn(name="index_number")
 	public List<Track> getTracks() {
 		if (tracks == null || tracks.length == 0) {

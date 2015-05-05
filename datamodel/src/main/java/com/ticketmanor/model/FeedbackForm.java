@@ -29,11 +29,11 @@ public class FeedbackForm implements Serializable {
 	String comment;
 	
 	/**
-	 * @param id
-	 * @param custName
-	 * @param custEmail
-	 * @param date
-	 * @param comment
+	 * @param id The primary key
+	 * @param custName The customer name
+	 * @param custEmail The customer email
+	 * @param date The date the comment was made
+	 * @param comment The actual text of the comment.
 	 */
 	public FeedbackForm(long id, String custName, String custEmail,
 			LocalDateTime date, String comment) {

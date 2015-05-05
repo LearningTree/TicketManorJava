@@ -25,7 +25,11 @@ public class OrderItem implements Serializable {
 		this.setSellable(sellable);
 		this.setQuantity(quantity);
 	}
-	/** Note default quantity is 1; you don't add 0-item entries... */
+	/** 
+	 * Construct an OrderItem with default quantity
+	 * Note default quantity is 1; you don't add 0-item entries...
+	 * @param sellable The item being ordered.
+	 */
 	public OrderItem(Sellable sellable) {
 		this(sellable, 1);
 	}

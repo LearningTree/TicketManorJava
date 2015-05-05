@@ -39,23 +39,11 @@ public class Track implements Serializable {
 	 */
 	private String title;
 
-	/**
-	 *  The track duration
-	 */
+	/** The track duration or running time */
 	private Duration duration;
 	
 	/** Recording this track is part of */
 	private Recording recording;
-
-	@ManyToOne
-	@JoinColumn(name="product_id")
-	public Recording getRecordingId() {
-		return recording;
-	}
-
-	public void setRecordingId(Recording recording) {
-		this.recording = recording;
-	}
 
 	/**
 	 *  Default constructor.  Simply creates an empty track.
@@ -67,24 +55,37 @@ public class Track implements Serializable {
 
   	/**
 	 *  Creates a Track with the given parameter values
+	 * @param aTitle The title for this Track
+	 * @param aDuration The running time of this track
 	 */
 	public Track(String aTitle, Duration aDuration) {
 		title = aTitle;
 		duration = aDuration;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="product_id")
+	public Recording getRecording() {
+		return recording;
+	}
+
+	public void setRecording(Recording recording) {
+		this.recording = recording;
+	}
+
 	/**
 	 *  Returns the title of the track
+	 *  @return the title of the track
 	 */
 	public String getTitle() {
 		return title;
@@ -92,6 +93,7 @@ public class Track implements Serializable {
 
 	/**
 	 *  Sets the title of the track
+	 * @param aTitle The new title
 	 */
 	public void setTitle(String	aTitle) {
 		title = aTitle;
@@ -99,6 +101,7 @@ public class Track implements Serializable {
 
 	/**
 	 *  Returns the duration of the track
+	 *  @return The duration of the track
 	 */
 	@Embedded
 	public Duration getDuration() {
@@ -107,6 +110,7 @@ public class Track implements Serializable {
 
 	/**
 	 *  Sets the duration of the track
+	 * @param aDuration The new Duration
 	 */
 	public void setDuration(Duration aDuration) {
 		duration = aDuration;
@@ -121,6 +125,7 @@ public class Track implements Serializable {
 	 *   <pre>
 	 *    title, duration
 	 *   </pre>
+	 * @return A string representatino of the Track
 	 */
 	public String toString() {
 

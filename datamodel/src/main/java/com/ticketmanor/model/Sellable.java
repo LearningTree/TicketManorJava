@@ -26,7 +26,10 @@ public abstract class Sellable {
 		this.id = id;
 	}
 	
-	/** Get the price of quantity one of this item */
+	/** 
+	 * Get the price of quantity one of this item.
+	 * @return The price of one of these things.
+	 */
 	public double getPrice() {
 		return price;
 	}
