@@ -10,10 +10,10 @@ import com.sun.net.httpserver.HttpServer;
 
 /**
  * This exercise is ONLY used in the JavaScript exercise.
- * <br/>
+ * <br>
  * This class is called SimpleServer for a reason; it has no security so DO NOT
  * USE WHEN CONNECTED TO THE INTERNET
- * <br/>
+ * <br>
  * Also note that this uses code from com.sun.net which is not
  * guaranteed to exist in any particular Java implementation
  * (although it's been in Java 6, 7, and 8 so it's unlikely to
