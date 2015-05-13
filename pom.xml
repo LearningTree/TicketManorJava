@@ -14,7 +14,7 @@
 
 	<modules>
 		<module>datamodel</module>
-		<module>javaee</module>
+		<module>ticketmanor-ee</module>
 		<module>javaee-client</module>
 	</modules>
 
