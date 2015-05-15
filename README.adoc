@@ -22,7 +22,9 @@ The Android project uses Android Studio (based on IntelliJ IDea) to write code
 and Gradle to compile/test/package.
 
 The top-level Maven pom runs each of the other projects (including android, through
-a Maven plug-in that knows how to run Gradle).
+a Maven plug-in that knows how to run Gradle). For some reason the top-level build
+doesn't always succeed, so you might want to build just the EE project, as below.
+
 
 .*Build*
 image:http://img.shields.io/badge/license-BSD2-green.svg[link="https://github.com/LearningTree/TicketManorJava/blob/master/LICENSE"]
@@ -47,17 +49,33 @@ a datasource named TicketManorDataSource.  For initial testing I just added:
 
 We should someday change this to MySQL or a real database before deployment.
 
+	cd ticketmanor-ee
+	mvn wildfly:deploy # Assuming you have WildFly running
+
 N.B. Never give the production app unfettered access to the database;
-limit it by doing something like this (commands are from PostgreSQL but
-will be similar on other DB products):
+limit it by doing something like the following, which creates a new account
+in the database accounting mechanism, separate from the database account that owns the database tables,
+and gives it only insert and update privileges.
+Commands are from PostgreSQL but will be similar on other DB products.
 
 ----
-website=# create role myAppAcct login password 'siuojk21jsr';
+website=# \c ticketmanor
+You are now connected to database "ticketmanorjava"...
+
+website=# create role myAppAcct login password 'someEnchantedPasswordHere45678';
 CREATE ROLE
-website=# grant select,insert on someTable to myAppAcct;
+
+website=# revoke all on database ticketmanorjava from myAppAcct;
+REVOKE
+
+website=# grant select, insert, update on all tables in schema public to myAppAcct;
 GRANT
 website=# 
+
 ----
+
+The "schema public" only applies to the current database, so it's important to connect
+to the correct database before issuing this command!
 
 You might need a few other perms if JPA/Hibernate is running in "create" or "update" mode,
 but these modes should not really be used in production!
