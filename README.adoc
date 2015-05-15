@@ -56,22 +56,21 @@ N.B. Never give the production app unfettered access to the database;
 limit it by doing something like the following, which creates a new account
 in the database accounting mechanism, separate from the database account that owns the database tables,
 and gives it only insert and update privileges.
-Commands are from PostgreSQL but will be similar on other DB products.
+Commands are from PostgreSQL (where 'role' means 'user') but will be similar on other DB products.
 
 ----
-website=# \c ticketmanor
+postgres=# \c ticketmanor
 You are now connected to database "ticketmanorjava"...
 
-website=# create role myAppAcct login password 'someEnchantedPasswordHere45678';
+ticketmanor=# create role myAppAcct login password 'someEnchantedPasswordHere45678';
 CREATE ROLE
 
-website=# revoke all on database ticketmanorjava from myAppAcct;
+ticketmanor=# revoke all on database ticketmanorjava from myAppAcct;
 REVOKE
 
-website=# grant select, insert, update on all tables in schema public to myAppAcct;
+ticketmanor=# grant select, insert, update on all tables in schema public to myAppAcct;
 GRANT
-website=# 
-
+ticketmanor=# 
 ----
 
 The "schema public" only applies to the current database, so it's important to connect
@@ -79,6 +78,9 @@ to the correct database before issuing this command!
 
 You might need a few other perms if JPA/Hibernate is running in "create" or "update" mode,
 but these modes should not really be used in production!
+
+Note that when you want to delete a role that has been granted permissions, you must
+first use $$drop owned by myappacct cascade;$$.
 
 == Naming Conventions
 
