@@ -80,7 +80,7 @@ You might need a few other perms if JPA/Hibernate is running in "create" or "upd
 but these modes should not really be used in production!
 
 Note that when you want to delete a role that has been granted permissions, you must
-first use $drop owned by myappacct cascade;$.
+first use _drop owned by myappacct cascade;_.
 
 == Naming Conventions
 
