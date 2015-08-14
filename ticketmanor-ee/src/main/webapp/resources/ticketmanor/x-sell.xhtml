@@ -1,0 +1,22 @@
+<!-- Cross-sell recordings for this Act -->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:composite="http://xmlns.jcp.org/jsf/composite" 
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+	<composite:interface>
+		<composite:attribute name="act" required="true"/>
+		<composite:attribute name="txt" required="true"/>
+	</composite:interface>
+	<composite:implementation>
+		<!-- Nothing rendered if empty; don't advertise a negative! -->
+		<ui:fragment rendered="#{!empty recordingList.recordingsForArtist(act)}">
+			<h:outputText value="#{cc.attrs.txt}"/>
+			<h:dataTable var="rec" value="#{recordingList.recordingsForArtist(cc.attrs.act)}">
+				<h:column>Artist: #{rec.artist}</h:column>
+				<h:column>Title: #{rec.title}</h:column>
+				<h:column>Price: #{rec.price}</h:column>
+			</h:dataTable>
+		</ui:fragment>
+	</composite:implementation> 
+</h:body>
