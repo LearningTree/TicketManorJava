@@ -17,7 +17,7 @@
 				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
 				<h:form id="eventsForm">
 
-					<div style="border:10px">
+					<p:panel header="Search for Upcoming Events">
 					<h:outputText value="How many days worth of events?"/>
 					<h:selectOneMenu required="true" id="nDaysTextField" value="#{eventsBean.numDays}">
 						<f:selectItem itemValue="1" itemLabel="Today's Events"/>
@@ -27,12 +27,12 @@
 						<f:selectItem itemValue="30" itemLabel="Next month's worth"/>
 					</h:selectOneMenu>
 					<h:message for="nDaysTextField" errorStyle="color:red"/>
-					</div>
 
 					<h:commandButton id="submit"
 						action="#{eventsBean.getEventsNextNDays}" 
 						value="Search">
 					</h:commandButton>
+					</p:panel>
 					
 				</h:form>
 				<!-- The results will show up on eventsList.web -->
