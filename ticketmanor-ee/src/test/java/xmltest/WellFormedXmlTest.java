@@ -1,6 +1,7 @@
 package xmltest;
 
 import java.io.File;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +81,17 @@ public class WellFormedXmlTest {
 			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			// Disable loading of DTDs; we just want a quick syntax parse
-			dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			// Check reflectively due to so darn many old versions of Xerces
+			try {
+				Method setFeatureMethod = 
+						DocumentBuilderFactory.class.getMethod("setFeature", 
+								new Class<?>[]{String.class, boolean.class});
+				if (setFeatureMethod != null) {
+					setFeatureMethod.invoke(dbFactory, "http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+				}
+			} catch (NoSuchMethodException nse) {
+				System.out.println("Schema loading NOT disabled; old version of Xerces on runtime classpath");
+			}
 
 			DocumentBuilder parser = dbFactory.newDocumentBuilder();
 			parser.parse(xmlFile);
