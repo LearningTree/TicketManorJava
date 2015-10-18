@@ -49,6 +49,12 @@
 		  <artifactId>hibernate-core</artifactId>
 		  <version>4.3.7.Final</version>
 		  <scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 		  <groupId>org.hibernate</groupId>
