@@ -61,11 +61,11 @@ public class MusicRecording extends Recording {
 						  String theTitle, double thePrice,
 						  String theCategory, String theImageName) {
 
-		super.title = theTitle;
-		super.price = thePrice;
-		this.category = theCategory;
 		artist = theArtist;
 		tracks = theTrackList;
+		super.title = theTitle;
+		setPrice(thePrice);
+		this.category = theCategory;
 	}
 
 	/**

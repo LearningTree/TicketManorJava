@@ -20,8 +20,6 @@ public class Ticket extends Sellable implements Serializable {
 	@ManyToOne @NotNull Event event;
 	/** The seat number that this Ticket is for; null means non-reserved seating */
 	String seatNumber;
-	/** The price of this seat, in dollars and cents */
-	@NotNull Double price;
 	
 	public Ticket(Event e, String seatNumber, Double price) {
 		this.event = e;

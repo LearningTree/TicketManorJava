@@ -18,7 +18,6 @@ public abstract class Recording extends Sellable implements Serializable {
 
 	private static final long serialVersionUID = 129287912L;
 	protected String title;
-	protected double price;
 	int version;
 	
 	public Recording() {
@@ -37,14 +36,6 @@ public abstract class Recording extends Sellable implements Serializable {
 	public abstract Duration getDuration();
 	public void setDuration(Duration d) {
 		// System.err.println("Lame-but-required method called");
-	}
-		
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
 	}
 
 	public String getTitle() {

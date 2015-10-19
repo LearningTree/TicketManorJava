@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.NotNull;
 
 /** Interface that all sellable products implement;
  * can't be an interface because JPA requires classes in relationships
@@ -17,7 +18,8 @@ public abstract class Sellable {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	
-	double price;
+	@NotNull
+	Double price;
 	
 	public long getId() {
 		return id;
@@ -30,10 +32,10 @@ public abstract class Sellable {
 	 * Get the price of quantity one of this item.
 	 * @return The price of one of these things.
 	 */
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 }
