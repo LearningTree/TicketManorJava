@@ -3,9 +3,6 @@ package com.ticketmanor.model.recording;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Version;
@@ -21,7 +18,7 @@ public abstract class Recording extends Sellable implements Serializable {
 	int version;
 	
 	public Recording() {
-		version = 0;
+		// Empty constructor needed for JPA
 	}
 	
 	@Version
