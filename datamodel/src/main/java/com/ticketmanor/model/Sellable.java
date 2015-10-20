@@ -20,6 +20,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Sellable implements Serializable {
 
+	private static final long serialVersionUID = 6968127808893956852L;
+
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	

@@ -11,7 +11,9 @@ import com.ticketmanor.model.Person;
 
 @Entity
 public class Actor extends Person {
-	
+
+	private static final long serialVersionUID = -2639453168023158316L;
+
 	@OneToMany
 	Set<VideoRecording> videos = new HashSet<VideoRecording>();
 	
