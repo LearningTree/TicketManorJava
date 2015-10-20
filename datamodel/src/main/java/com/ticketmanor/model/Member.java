@@ -2,11 +2,12 @@ package com.ticketmanor.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
 /*
  * Member - A Person who has signed up for the site.
  */
-import javax.xml.bind.annotation.XmlRootElement;
-
 @XmlRootElement
 @Entity
 @Table(name="members")

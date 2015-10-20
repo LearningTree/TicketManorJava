@@ -8,8 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 /*
- * Auditorium - XXX
+ * Auditorium - a part of a Venue where Events play out.
  */
 import javax.xml.bind.annotation.XmlRootElement;
 

@@ -8,11 +8,13 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.validation.constraints.NotNull;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /** Interface that all sellable products implement;
  * can't be an interface because JPA requires classes in relationships
  * (which makes sense...)
  */
-@Entity
+@XmlRootElement @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Sellable {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
