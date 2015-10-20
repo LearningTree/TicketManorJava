@@ -24,11 +24,11 @@ public class Ticket extends Sellable implements Serializable {
 	public Ticket(Event e, String seatNumber, Double price) {
 		this.event = e;
 		this.seatNumber = seatNumber;
-		this.price = price;
+		setPrice(price);
 	}
 	
 	public Ticket() {
-		
+		// Null constructor needed for JPA
 	}
 	
 	public Event getEvent() {
