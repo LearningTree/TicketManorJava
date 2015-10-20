@@ -1,5 +1,6 @@
 package com.ticketmanor.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 @Entity @Table(name="orders")
-public class Order   {
+public class Order implements Serializable  {
+	private static final long serialVersionUID = 1L;
+	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	@ManyToOne

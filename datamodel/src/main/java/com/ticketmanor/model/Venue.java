@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity @Table(name="venues")
 @XmlRootElement
 public class Venue implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	

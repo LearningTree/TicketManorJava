@@ -9,8 +9,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @XmlRootElement @JsonIgnoreProperties(ignoreUnknown=true)
 @Entity @Table(name="movies")
 public class Movie extends Act {
-	
-	String director;
+
+	private static final long serialVersionUID = 4996635516154938063L;
+
+	private String director;
 	
 	public Movie(String director, String title, int year) {
 		super(ActType.MOVIE);

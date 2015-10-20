@@ -1,5 +1,9 @@
 package com.ticketmanor.model;
 
-public class Location {
-	// placeholder class
+import java.io.Serializable;
+
+/** placeholder class */
+public class Location implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 }
