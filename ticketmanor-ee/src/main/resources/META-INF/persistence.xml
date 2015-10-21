@@ -17,8 +17,6 @@
 
 	<jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
 
-	<exclude-unlisted-classes>false</exclude-unlisted-classes>
-
 	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
 	<class>com.ticketmanor.model.Act</class>
 	<class>com.ticketmanor.model.ActType</class>
@@ -34,6 +32,8 @@
 	<class>com.ticketmanor.model.Person</class>
 	<class>com.ticketmanor.model.Ticket</class>
 	<class>com.ticketmanor.model.Venue</class>
+
+	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	<properties>
 
