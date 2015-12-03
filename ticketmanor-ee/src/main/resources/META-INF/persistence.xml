@@ -23,6 +23,7 @@
 	<class>com.ticketmanor.model.Address</class>
 	<class>com.ticketmanor.model.Admin</class>
 	<class>com.ticketmanor.model.Auditorium</class>
+	<class>com.ticketmanor.model.Customer</class>
 	<class>com.ticketmanor.model.Event</class>
 	<class>com.ticketmanor.model.FeedbackForm</class>
 	<class>com.ticketmanor.model.Member</class>
