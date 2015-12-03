@@ -68,7 +68,7 @@ public class EventsEjb {
 	 * @param locn The Location in which to look for the events
 	 * @return A list of Events over the next n days
 	 */
-	@GET
+	// @GET
 	public List<Event> getEventsNextNDays(int nDays, Location locn) {
 		// XXX Doesn't handle location yet!
 		return getEventsNextNDays(nDays);
