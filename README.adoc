@@ -47,7 +47,7 @@ a datasource named TicketManorDataSource.  For initial testing I just added:
 		</security>
 	</datasource>
 
-We should someday change this to MySQL or a real database before deployment.
+We should someday change this to a real database like PostgreSQL before deployment.
 
 	cd ticketmanor-ee
 	mvn wildfly:deploy # Assuming you have WildFly running
@@ -84,11 +84,11 @@ first use _drop owned by myappacct cascade;_.
 
 == Naming Conventions
 
-In the Java code:
+In the Java code, classnames with:
 
-* *Bean means either a JSF managed JavaBean or a Spring-managed JavaBean;
-* *Resource means a RESTful web service endpoint;
-* *Ejb (or *EJB) of course represents an Enterprise JavaBean.
+* _Bean_ means either a JSF managed JavaBean or a Spring-managed JavaBean;
+* _Resource_ means a RESTful web service endpoint;
+* _Ejb_ (or *EJB) of course represents an Enterprise JavaBean.
 
 == ToDos
 
