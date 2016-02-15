@@ -10,9 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-/*
- * Event - An Event is one act at one time at one Venue
- */
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -20,6 +17,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.ticketmanor.model.jackson.MyLocalDateTimeDeserializer;
 import com.ticketmanor.model.jackson.MyLocalDateTimeSerializer;
 
+/*
+ * Event - An Event is one act at one time at one Venue
+ */
 @XmlRootElement
 @Entity @Table(name="events")
 public class Event implements Serializable {

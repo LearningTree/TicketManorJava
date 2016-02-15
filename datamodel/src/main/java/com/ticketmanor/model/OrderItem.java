@@ -25,6 +25,11 @@ public class OrderItem implements Serializable {
 		this.setSellable(sellable);
 		this.setQuantity(quantity);
 	}
+
+	public OrderItem() {
+		// Required for JPA
+	}
+
 	/** 
 	 * Construct an OrderItem with default quantity
 	 * Note default quantity is 1; you don't add 0-item entries...
