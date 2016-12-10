@@ -4,10 +4,12 @@
 		http://maven.apache.org/maven-v4_0_0.xsd">
  
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>datamodel</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
 	<name>Data Model for TicketManor, a Demo Enterprise Application</name>
 	<url>http://ticketmanor.com/</url>
 
