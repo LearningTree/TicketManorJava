@@ -1,0 +1,5 @@
+-- WARNING this will completely destroy the ticketmanor database.
+-- Will only work if the app has been undeployed and the app server shut down
+-- IN THAT ORDER (do not have to shut down the database server).
+drop database if exists ticketmanor;
+create database ticketmanor owner student;

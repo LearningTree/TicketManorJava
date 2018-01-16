@@ -1,8 +1,19 @@
 -- import.sql for TicketManor project
 
+-- Venues
+
 insert into venues(id, name, streetAddress, city, provState, country, lat, lng) values(1, 'Carnegie Hall', '881 Seventh Avenue', 'New York', 'NY', 'US', 40.764938, -73.979897);
 insert into venues(id, name, streetAddress, city, provState, country, lat, lng) values(2, 'Roy Thompson Hall', '60 Simcoe Street', 'Toronto', 'ON', 'CA', 43.646596, -79.386413);
 
+insert into venues(id, name) values(3, 'Rogers Stadium');
+insert into venues(id, name) values(4, 'Candlestick Park');
+insert into venues(id, name) values(5, 'Maple Leaf Gardens');
+insert into venues(id, name) values(6, 'United Centre');
+insert into venues(id, name) values(7, 'London Palladium');
+
+-- Acts
+
+insert into acts(id, title, year) values(1, 'Act One', 2018);
 insert into acts(id, title, year) values(-1, 'Rush', 1980);
 insert into acts(id, title, year) values(-2, 'Beach Boys', 0);
 insert into acts(id, title, year) values(-3, 'Boston Pops', 0);
@@ -47,13 +58,21 @@ insert into acts(id, title, year) values(-41, 'AC/DC', 0);
 insert into acts(id, title, year) values(-42, 'Coldplay', 0);
 insert into acts(id, title, year) values(-43, 'Bob Sieger', 0);
 
-insert into acts (id, title, type, year) values (-100, 'Star Wars Bloopers', 0, 2001);
-insert into movies (id, director) values (-3, 'George Lucas');
+insert into acts(id, title, type, year) values(-50, 'Nicks vs Raptors', 3, 0);
+insert into acts(id, title, type, year) values(-51, 'Blue Jays vs Mets', 3, 0);
+insert into acts(id, title, type, year) values(-52, 'Red Sox vs Maple Leafs', 3, 0);
+insert into acts(id, title, type, year) values(-53, 'Blackhawks vs Canucks', 3, 0);
+insert into acts(id, title, type, year) values(-54, 'Real Madrid vs Barcelona', 3, 0);
+
+insert into acts (id, title, type, year) values (-100, 'Star Wars Episode 15: The Next Jedi', 0, 2021);
+insert into movies (id, director) values (-100, 'George Lucas');
+
+insert into acts(id, title, type, year) values(-60, 'Sun Never Sets: The Musical', 2, 0);
 
 -- ert into events (id, what_id, date_time, venue_id) values (-1, -3, '2016-06-22 14:00:00', null);
 insert into events (id, what_id, date_time, venue_id) values (-1, -3, null, null);
 
-insert into people(id, firstName, lastName) values(-1, 'System', 'Administrator');
-insert into members(id) values(-1);
+insert into people(id, firstName, lastName) values(-17, 'System', 'Administrator');
+insert into members(id) values(-17);
 
 
