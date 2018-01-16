@@ -1,5 +1,0 @@
-tar cvf /tmp/dd src/main/webapp/WEB-INF/web.xml src/main/webapp/admin/login.xhtml src/main/webapp/admin/template/standard.xhtml src/main/webapp/admin/loginfailure.jsp 
-
-cd /tmp
-
-tar xvf ~/crs936/sourcecode/ex81solution
