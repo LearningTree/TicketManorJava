@@ -25,6 +25,7 @@
 			 <groupId>javax</groupId>	
 			<artifactId>javaee-web-api</artifactId>	
 			<version>7.0</version>	
+			<scope>provided</scope>
 		</dependency>
 	
 		<!-- Jackson 2 -->
@@ -47,18 +48,6 @@
 			<scope>provided</scope>
 		</dependency>
  
-		<!-- Hibernate (in case we want to add Hibernate annotations) -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.3.7.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.7.Final</version>
-		</dependency>
-
 		<!-- testing -->
 		<dependency>
 			<groupId>junit</groupId>
