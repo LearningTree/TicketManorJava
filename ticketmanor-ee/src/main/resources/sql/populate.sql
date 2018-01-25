@@ -1,3 +1,8 @@
+-- Populate Acts and Venues here, but not Events (which are date-dependant;
+-- those are created by the FakeDataLoaderEjb
+
+-- ACTS
+
 insert into acts(id, title, type, year) values( -100, 'Star Wars Episode 15: The Next Jedi', 0, 2021);
 insert into acts(id, title, type, year) values( -63, 'Elton John', 2, 0);
 insert into acts(id, title, type, year) values( -62, 'Tom Petty', 2, 0);
@@ -52,3 +57,14 @@ insert into acts(id, title, type, year) values( -3, 'Boston Pops', 2, 0);
 insert into acts(id, title, type, year) values( -2, 'Beach Boys', 2, 0);
 insert into acts(id, title, type, year) values( -1, 'Rush', 2, 1980);
 insert into acts(id, title, type, year) values( 1, 'Act One', 2, 2018);
+
+-- VENUES
+
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 6, 'Flippingdon', null, null, null, 'United Centre', null, null);
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 7, 'London', 'UK', null, null, 'London Palladium', null, null);
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 1, 'New York', 'US', 40.764938, -73.979897, 'Carnegie Hall', 'NY', '881 Seventh Avenue');
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 4, 'San Francisco', 'US', null, null, 'Candlestick Park', null, null);
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 2, 'Toronto', 'CA', 43.646596, -79.386413, 'Roy Thompson Hall', 'ON', '60 Simcoe Street');
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 5, 'Toronto', 'CA', null, null, 'Maple Leaf Gardens', null, null);
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 3, 'Toronto', 'CA', null, null, 'Rogers Stadium', null, null);
+insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 8, 'Toronto', 'CA', null, null, 'Air Canada Centre', null, null);
