@@ -37,23 +37,20 @@
 	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	<properties>
+		<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+		<property name="javax.persistence.sql-load-script-source" value="sql/populate.sql"/>
 
-	<!-- Properties for eclipselink -->
-	<!--
-	<property name="eclipselink.target-database"
-	      value="org.eclipse.persistence.platform.database.MySqlPlatform"/>
-	-->
-	<property name="eclipselink.logging.level" value="OFF"/>
-	<property name="eclipselink.orm.throw.exceptions" value="true"/>
-	<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-	<property name="eclipselink.ddl-generation.output-mode" value="database"/>
+		<!-- Properties for eclipselink -->
+		<property name="eclipselink.target-database"
+			  value="org.eclipse.persistence.platform.database.PostgreSQLPlatform"/>
+		<property name="eclipselink.logging.level" value="OFF"/>
+		<property name="eclipselink.orm.throw.exceptions" value="true"/>
 
-	<!-- Properties for Hibernate -->
-	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-	<property name="hibernate.hbm2ddl.auto" value="create"/>
-	<property name="hibernate.show_sql" value="true"/>
-	<property name="hibernate.format_sql" value="false"/>
-	<property name="hibernate.archive.autodetection" value="class"/>
+		<!-- Properties for Hibernate -->
+		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+		<property name="hibernate.show_sql" value="true"/>
+		<property name="hibernate.format_sql" value="false"/>
+		<property name="hibernate.archive.autodetection" value="class"/>
 
 	</properties>
 </persistence-unit>

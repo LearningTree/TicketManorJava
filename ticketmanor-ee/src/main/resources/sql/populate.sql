@@ -3,16 +3,15 @@
 
 -- ACTS
 
+-- Movies are Acts but in a joined table.
 insert into acts(id, title, type, year) values( -100, 'Star Wars Episode 15: The Next Jedi', 0, 2021);
+insert into movies (id, director) values (-100, 'George Lucas');
+
+-- Regular singers
 insert into acts(id, title, type, year) values( -63, 'Elton John', 2, 0);
 insert into acts(id, title, type, year) values( -62, 'Tom Petty', 2, 0);
 insert into acts(id, title, type, year) values( -61, 'Neil Diamond', 2, 0);
 insert into acts(id, title, type, year) values( -60, 'Sun Never Sets: The Musical', 2, 0);
-insert into acts(id, title, type, year) values( -54, 'Real Madrid vs Barcelona', 3, 0);
-insert into acts(id, title, type, year) values( -53, 'Blackhawks vs Canucks', 3, 0);
-insert into acts(id, title, type, year) values( -52, 'Red Sox vs Maple Leafs', 3, 0);
-insert into acts(id, title, type, year) values( -51, 'Blue Jays vs Mets', 3, 0);
-insert into acts(id, title, type, year) values( -50, 'Nicks vs Raptors', 3, 0);
 insert into acts(id, title, type, year) values( -49, 'Bruce Springsteen', 2, 0);
 insert into acts(id, title, type, year) values( -43, 'Bob Sieger', 2, 0);
 insert into acts(id, title, type, year) values( -42, 'Coldplay', 2, 0);
@@ -58,6 +57,13 @@ insert into acts(id, title, type, year) values( -2, 'Beach Boys', 2, 0);
 insert into acts(id, title, type, year) values( -1, 'Rush', 2, 1980);
 insert into acts(id, title, type, year) values( 1, 'Act One', 2, 2018);
 
+-- Sports Events (should be a new type with home and visitor teams. Someday)
+insert into acts(id, title, type, year) values( -54, 'Real Madrid vs Barcelona', 3, 0);
+insert into acts(id, title, type, year) values( -53, 'Blackhawks vs Canucks', 3, 0);
+insert into acts(id, title, type, year) values( -52, 'Red Sox vs Maple Leafs', 3, 0);
+insert into acts(id, title, type, year) values( -51, 'Blue Jays vs Mets', 3, 0);
+insert into acts(id, title, type, year) values( -50, 'Nicks vs Raptors', 3, 0);
+
 -- VENUES
 
 insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 6, 'Flippingdon', null, null, null, 'United Centre', null, null);
@@ -68,3 +74,8 @@ insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) 
 insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 5, 'Toronto', 'CA', null, null, 'Maple Leaf Gardens', null, null);
 insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 3, 'Toronto', 'CA', null, null, 'Rogers Stadium', null, null);
 insert into venues(id, city, country, lat, lng, name, provstate, streetaddress) values ( 8, 'Toronto', 'CA', null, null, 'Air Canada Centre', null, null);
+
+-- PEOPLE
+
+insert into people(id, firstName, lastName) values(-17, 'System', 'Administrator');
+insert into members(id) values(-17);
