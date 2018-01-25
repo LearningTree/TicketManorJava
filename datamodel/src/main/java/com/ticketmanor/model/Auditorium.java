@@ -24,5 +24,7 @@ public class Auditorium implements Serializable {
 
 	String name;
 	String address;
+	// The intention here is that one Venue might have several Auditoria within it,
+	// like a Multiplex cinema, and we'd need to track those in real life.
 	@ManyToOne Venue venue;
 }
