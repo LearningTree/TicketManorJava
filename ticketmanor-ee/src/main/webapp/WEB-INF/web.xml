@@ -22,10 +22,6 @@
 		<url-pattern>*.web</url-pattern>
 	</servlet-mapping>
 	
-	<listener>
-	    <listener-class>com.ticketmanor.jpa.FakeDataLoaderListener</listener-class>
-	</listener>
-
 	<!-- TODO here is a good place to install some security configuration stuff -->
 
 </web-app>
