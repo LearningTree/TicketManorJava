@@ -44,7 +44,9 @@
 			<version>1.0</version>
 		</dependency>
 
-		<!-- Hibernate not needed in WildFly as it is included, but prob. needed on other App Servers-->
+		<!-- Hibernate not needed in WildFly as it is included, so scope "provided",
+		 *** but may be needed on other App Servers
+		 -->
 		<dependency>
 		  <groupId>org.hibernate</groupId>
 		  <artifactId>hibernate-core</artifactId>
