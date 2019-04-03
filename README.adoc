@@ -1,5 +1,7 @@
 = TicketManor
 
+This is in the process of being updated for Java SE 11 and Java 8/Eclipse Jakarta.
+
 This is a demo application of building enterprise applications using Java EE. There are 
 a variety of APIs used, e.g., Java EE (JPA, EJB), Spring Framework, modern SPA Web (Angular, Ember.JS),
 and so on. Each major framework has its own subdirectory.
