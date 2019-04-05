@@ -9,16 +9,16 @@
 
    		<ui:composition template="/template/standard.xhtml">
 
-			<ui:define name="pageTitle">Events</ui:define>
+			<ui:define name="pageTitle">Live Events</ui:define>
   
-			<ui:define name="pageHeader">Events</ui:define>
+			<ui:define name="pageHeader">Live Events</ui:define>
 
 			<ui:define name="body">
 				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
 				<h:form id="eventsForm">
 
-					<p:panel header="Search for Upcoming Events">
-					<h:outputText value="How many days worth of events?"/>
+					<p:panel header="Search for Upcoming Concert Events">
+					<h:outputText value="How many days worth of concerts?"/>
 					<h:selectOneMenu required="true" id="nDaysTextField" value="#{eventsBean.numDays}">
 						<f:selectItem itemValue="1" itemLabel="Today's Events"/>
 						<f:selectItem itemValue="2" itemLabel="Today + Tomorrow"/>
@@ -27,6 +27,18 @@
 						<f:selectItem itemValue="30" itemLabel="Next month's worth"/>
 					</h:selectOneMenu>
 					<h:message for="nDaysTextField" errorStyle="color:red"/>
+
+					<!-- NOT USED YET, just feel-food :-) -->
+					<h:selectOneMenu required="false" id="categoryField">
+						<f:selectItem itemLabel="Rock"/>
+						<f:selectItem itemLabel="Folk"/>
+						<f:selectItem itemLabel="Hip-Hop"/>
+						<f:selectItem itemLabel="Comedy"/>
+						<f:selectItem itemLabel="Classical Music"/>
+						<f:selectItem itemLabel="Opera"/>
+						<f:selectItem itemLabel="All Categories"/>
+					</h:selectOneMenu>
+					<h:message for="categoryField" errorStyle="color:red"/>
 
 					<h:commandButton id="submit"
 						action="#{eventsBean.getEventsNextNDays}" 
@@ -38,7 +50,7 @@
 				<!-- The results will show up on eventsList.web -->
 
 				<p:panel>
-					<f:facet name="header">Concerts  News</f:facet>
+					<f:facet name="header">Live Events News</f:facet>
 					<p:feedReader value="http://rss.news.yahoo.com/rss/music" var="news" size="5">
 						<h:outputText value="#{news.title}" style="font-weight: bold;display:block"/>
 						<h:outputText value="#{news.description.value}" escape="false"/>

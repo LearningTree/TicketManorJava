@@ -7,7 +7,7 @@ Normal flow:
 
 Home page -> one of:
 	Sporting Events Section
-	Concerts Section
+	Live Events Section
 	Theatre Events Section
 
 	Then you see an event you like, click Shop ->

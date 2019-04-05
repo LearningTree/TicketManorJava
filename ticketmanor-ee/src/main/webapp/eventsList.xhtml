@@ -9,15 +9,18 @@
 
    		<ui:composition template="/template/standard.xhtml">
 
-			<ui:define name="pageTitle">Events</ui:define>
+			<ui:define name="pageTitle">Live Events</ui:define>
   
-			<ui:define name="pageHeader">Events</ui:define>
+			<ui:define name="pageHeader">Live Events</ui:define>
 
 			<ui:define name="body">
+
+				<h2>Live Events</h2>
+
 				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
 				
 				<h:outputText rendered="#{empty eventsBean.resultList}"
-					value="No events currently selected"/>
+					value="No concert events currently selected"/>
 				<p:dataTable rendered="#{!empty eventsBean.resultList}"
 					var="event" value="#{eventsBean.resultList}">
 					<p:column>
