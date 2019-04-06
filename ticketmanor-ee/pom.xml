@@ -1,8 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
   	http://maven.apache.org/maven-v4_0_0.xsd">
- 
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>ticketmanor-javaee</artifactId>
@@ -32,10 +32,10 @@
 
 		<!-- Java EE API -->
 		<dependency>
-		   <groupId>javax</groupId>    
-			<artifactId>javaee-web-api</artifactId>    
-			<version>8.0.1-b5</version>  
-		</dependency> 
+		   <groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>8.0.1-b5</version>
+		</dependency>
  
 		<!-- PrimeFaces JSF Add-on -->
 		<dependency>
@@ -44,9 +44,9 @@
 			<version>7.0</version>
 		</dependency>
 		<dependency>
-			<groupId>rome</groupId>
+			<groupId>com.rometools</groupId>
 			<artifactId>rome</artifactId>
-			<version>1.0</version>
+			<version>1.5.0</version>
 		</dependency>
 
 		<!-- Hibernate not needed in WildFly as it is included, so scope "provided",
@@ -80,7 +80,7 @@
         </dependency>
 
 	</dependencies>
- 
+
 	<build>
 		<plugins>
 
