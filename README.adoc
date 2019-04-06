@@ -1,7 +1,5 @@
 = TicketManor
 
-This is in the process of being updated for Java SE 11 and Java 8/Eclipse Jakarta.
-
 This is a demo application of building enterprise applications using Java EE. There are 
 a variety of APIs used, e.g., Java EE (JPA, EJB), Spring Framework, modern SPA Web (Angular, Ember.JS),
 and so on. Each major framework has its own subdirectory.
@@ -19,6 +17,8 @@ other commercial ticket selling organization.
 
 == Building
 
+This project now depends on Java SE 11 and Java EE 8.
+
 The Java projects generally use Eclipse to write/compile/test code and Maven to build/package.
 The Android project uses Android Studio (based on IntelliJ IDea) to write code
 and Gradle to compile/test/package.
@@ -34,7 +34,7 @@ image:https://img.shields.io/badge/maven-Standard Builds-pink.svg[link="https://
 
 == Deployment
 
-The server projects are configured to deploy with the EE Server WildFly 8+
+The server projects are configured to deploy with the EE Server WildFly 14+
 
 You MUST change the file ${WILDFLYHOME}/standalone/configuration/standalone.xml AND standalone-full.xml to have
 a datasource named TicketManorDataSource.  For initial testing I just added:
