@@ -7,8 +7,8 @@ App.Router.map(function() {
 App.IndexRoute = Ember.Route.extend({
   model: function() {
     return [ 
-		{'date':'2015-06-01', 'title':'Blues vs Tigers', 'venue':'Candlestick Park'},
-		{'date':'2015-06-02', 'title':'Raptors vs Nicks', 'venue':'Rogers Stadium'}
+		{'date':'2022-06-01', 'title':'Blues vs Tigers', 'venue':'Candlestick Park'},
+		{'date':'2022-06-02', 'title':'Raptors vs Nicks', 'venue':'Rogers Stadium'}
 	];
   }
 });
