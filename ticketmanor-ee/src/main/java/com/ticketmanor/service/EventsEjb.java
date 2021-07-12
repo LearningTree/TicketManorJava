@@ -46,14 +46,14 @@ public class EventsEjb {
 	 * Get all Concerts
 	 * @return A list of all Events
 	 */
-	public List<Event> getallConcerts() {
+	public List<Event> getAllConcerts() {
 		return allConcerts;
 	}
 	/**
 	 * Get all SportsEvents
 	 * @return A list of all Events
 	 */
-	public List<Event> getallSportsEvents() {
+	public List<Event> getAllSportsEvents() {
 		return allConcerts;
 	}
 

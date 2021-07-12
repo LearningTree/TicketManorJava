@@ -29,16 +29,18 @@ public class EventsEjbTest {
 
 		EventsEjb events = (EventsEjb) context.lookup("java:global/injection-of-entitymanager/EventsBean");
 
-		LocalDateTime today = LocalDateTime.now();
-		events.addEvent(new Event(new Movie("Quentin Tarantino", "Reservoir Dogs", 1992), today, null));
-		events.addEvent(new Event(new Movie("Joel Coen", "Fargo", 1996), today, null));
-		events.addEvent(new Event(new Movie("Joel Coen", "The Big Lebowski", 1998), today, null));
+		events.getAllConcerts().clear();	// remove pre-installed ones
 
-		List<Event> list = events.getAllEvents();
+		LocalDateTime today = LocalDateTime.now();
+		events.addConcert(new Event(new Movie("Quentin Tarantino", "Reservoir Dogs", 1992), today, null));
+		events.addConcert(new Event(new Movie("Joel Coen", "Fargo", 1996), today, null));
+		events.addConcert(new Event(new Movie("Joel Coen", "The Big Lebowski", 1998), today, null));
+
+		List<Event> list = events.getAllConcerts();
 		assertEquals("List.size()", 3, list.size());
 
 		for (Event event : list) {
-			events.deleteEvent(event);
+			events.deleteConcert(event);
 		}
 	}
 }
