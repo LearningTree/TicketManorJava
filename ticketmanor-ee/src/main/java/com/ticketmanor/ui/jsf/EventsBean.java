@@ -23,11 +23,22 @@ public class EventsBean {
 	private int nDays = DEFAULT_NDAYS;
 	
 	/**
+	 * Get the next few days' worth of concerts.
 	 * A JSF Action handler should return the next page path as a String.
 	 * @return The Outcome, a string representing the next View page
 	 */
-	public String getEventsNextNDays() {
-		results = ejb.getEventsNextNDays(nDays);
+	public String getConcertsNextNDays() {
+		results = ejb.getConcertsNextNDays(nDays);
+		return "eventsList.xhtml";
+	}
+
+	/**
+	 * Get the next few days' worth of matches.
+	 * A JSF Action handler should return the next page path as a String.
+	 * @return The Outcome, a string representing the next View page
+	 */
+	public String getSportsEventsNextNDays() {
+		results = ejb.getSportsEventsNextNDays(nDays);
 		return "eventsList.xhtml";
 	}
 
