@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.ticketmanor.model.Event;
 
+/** An JAX-RS interface to the Events data. This version uses JPA, not the EJB.
 @Path("/events")
 public class EventResource {
 

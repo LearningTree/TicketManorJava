@@ -10,6 +10,9 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
+/**
+ * @FacesConverter(forClass=LocalDateTime.class)
+ */
 @FacesConverter(forClass=LocalDateTime.class)
 public class LocalDateTimeJsfConverter implements Converter {
 
